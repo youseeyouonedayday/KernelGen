@@ -1,0 +1,73 @@
+You are a skilled GPU programmer proficient in Triton. Your task is to generate a Triton kernel function.
+Here is an example of a PyTorch function and its corresponding Triton kernel implementation:
+PyTorch function:
+def add(A, B):
+        return torch.add(A, B)
+Triton kernel implementation:
+import triton
+    import triton.language as tl
+
+
+    @triton.jit
+    def add_kernel(x_ptr,  # *Pointer* to first input vector.
+                y_ptr,  # *Pointer* to second input vector.
+                output_ptr,  # *Pointer* to output vector.
+                n_elements,  # Size of the vector.
+                BLOCK_SIZE: tl.constexpr,  # Number of elements each program should process.
+                # NOTE: `constexpr` so it can be used as a shape value.
+                ):
+        pid = tl.program_id(axis=0)  # We use a 1D launch grid so axis is 0.
+        block_start = pid * BLOCK_SIZE
+        offsets = block_start + tl.arange(0, BLOCK_SIZE)
+        mask = offsets < n_elements
+        x = tl.load(x_ptr + offsets, mask=mask)
+        y = tl.load(y_ptr + offsets, mask=mask)
+        output = x + y
+        tl.store(output_ptr + offsets, output, mask=mask)
+
+    def add(x: torch.Tensor, y: torch.Tensor):
+        output = torch.empty_like(x)
+        assert x.device == DEVICE and y.device == DEVICE and output.device == DEVICE
+        n_elements = output.numel()
+        grid = lambda meta: (triton.cdiv(n_elements, meta['BLOCK_SIZE']), )
+        add_kernel[grid](x, y, output, n_elements, BLOCK_SIZE=1024)
+        return output
+You must strictly adhere to the following specifications:
+The Triton kernel should implement the same functionality as the following PyTorch function:
+```python
+# Reference PyTorch implementation for aten::bitwise_not
+import torch
+
+bitwise_not = torch.ops.aten.bitwise_not
+```
+
+IMPORTANT: This PyTorch API is internally implemented using multiple ATen C++ operators. You need to provide separate Python wrapper functions for each ATen operator interface, but they can share the same Triton kernel(s).
+The ATen operators involved are:
+  - ('bitwise_not', <Autograd.disable: False>)
+  - ('bitwise_not.out', <Autograd.disable: False>)
+
+Your implementation should include:
+1. One or more @triton.jit decorated kernel function(s) that implement the core computation logic
+2. Multiple Python wrapper functions, each corresponding to one ATen operator interface
+3. For syntax considerations, replace '.' with '_' in the operator names when defining the Python wrapper function names
+
+The Python wrapper functions should have signatures like:
+  - def bitwise_not(...): # This wrapper calls the kernel(s)
+  - def bitwise_not_out(...): # This wrapper calls the kernel(s)
+
+These wrapper functions can internally call the same Triton kernel(s) with appropriate parameters.
+
+The input and output args of the function are as follows:
+Input and output Args: 
+  - bitwise_not
+    Input and Output Args: aten::bitwise_not(Tensor self) -> Tensor
+  - bitwise_not_out
+    Input and Output Args: aten::bitwise_not.out(Tensor self, *, Tensor(a!) out) -> Tensor(a!)
+The generated code should include both the Triton kernel definition (with @triton.jit) and the Python wrapper function(s) that launch the kernel.
+
+CRITICAL REQUIREMENTS:
+1. For pointwise operators, you MUST handle broadcasting correctly. Ensure your kernel supports inputs with different shapes that can be broadcast together according to PyTorch's broadcasting semantics.
+2. You MUST handle non-contiguous tensors correctly. Do not assume input tensors are contiguous in memory. Use proper stride calculations to access elements correctly for tensors with arbitrary memory layouts.
+You must provide wrapper functions for all the ATen operators mentioned above.
+You must generate the valid Triton code directly without any explanations or additional text, and ensure no testing or benchmarking code is included. The code must be complete and ready to run.
+You must use ```python ... ``` to format the code block.
