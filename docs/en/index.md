@@ -28,7 +28,27 @@ Have a quick view of KernelGen, and also some basic concepts.
 Guides you how to use natural language prompts to construct operator definitions and ultimately produce a Kernel.
 
 +++
-[Learn more »](user_guide/user-guide)
+[Learn more »](web_user_guide/web_user-guide)
+:::
+
+:::{grid-item-card} {octicon}`book;1.5em;sd-mr-1` User Guide
+:link: user_guide/user-guide
+:link-type: doc
+
+Guides you how to use natural language prompts to construct operator definitions and ultimately produce a Kernel.
+
++++
+[Learn more »](mcp_user_guide/mcp_user-guide)
+:::
+
+:::{grid-item-card} {octicon}`book;1.5em;sd-mr-1` User Guide
+:link: user_guide/user-guide
+:link-type: doc
+
+Guides you how to use natural language prompts to construct operator definitions and ultimately produce a Kernel.
+
++++
+[Learn more »](skill_user_guide/skills_user-guide)
 :::
 
 :::{grid-item-card} {octicon}`broadcast;1.5em;sd-mr-1` Use Cases
@@ -38,7 +58,17 @@ Guides you how to use natural language prompts to construct operator definitions
 Guides you how to contribute the KernelGen generated Kernel, Correctness Test, and Speedup Ratio Test to FlagGems GitHub.
 
 +++
-[Learn more »](use_case/use-case-pr)
+[Learn more »](web_use_case/web_use-case-pr)
+:::
+
+:::{grid-item-card} {octicon}`broadcast;1.5em;sd-mr-1` Use Cases
+:link: use_case/use-case-pr
+:link-type: doc
+
+Guides you how to contribute the KernelGen generated Kernel, Correctness Test, and Speedup Ratio Test to FlagGems GitHub.
+
++++
+[Learn more »](skill_use_case/skills_use-case-pr)
 :::
 
 ::::
