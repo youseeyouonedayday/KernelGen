@@ -1,6 +1,6 @@
 # KernelGen Skills User Guide
 
-This section introduces how to use VS Code (and Copilot), Claude Code, and OpenClaw to connect to the KernelGen MCP server and use KernelGen Skills to generate an operator generally.&#x20;
+This section introduces how to use VS Code (and Copilot), Claude Code, and OpenClaw to connect to the KernelGen MCP server and use KernelGen Skills to generate an operator generally.
 
 Regarding generating operators for FlagGems or vLLM project, optimizing operators, specializing operators across hardware platforms, and generating TLE operators, see *KernelGen Skills Use Cases*.
 
@@ -72,3 +72,13 @@ This section introduces how to use VS Code (and GitHub Copilot), Claude Code, an
 
 
 Regarding generating operators for FlagGems or vLLM project, optimizing operators, specializing operators across hardware platforms, and TLE-related use cases, see *KernelGen Skills Use Cases*.
+
+```{toctree}
+:maxdepth: 2
+
+
+configure-and-connect-mcp.md
+generate-ops-generally.md
+
+
+```
