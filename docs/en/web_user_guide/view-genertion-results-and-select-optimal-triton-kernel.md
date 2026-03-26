@@ -13,11 +13,8 @@ Perform the following steps to view the testing results and select an optimal Ke
     ![alt text](../assets/images/speedup-table-en.png)
     2. If the speedup of each scenario also meets your expectations, click **Download Kernel** on the top to download the Kernel code for future use. If you want to use the correctness test and speedup ratio test results, click **Correctness Test** and **Speedup Ratio Test** sections to copy and paste the corresponding codes.
   
-  - If the overall **Speedup Test** does not meet your expectations, choose one of the following methods to modify the Kernel code:
-  
-    - In the **Kernel** code section, modify the Kernel code and then click **Speedup Test** to start a new iteration.
+  - If the overall **Speedup Test** does not meet your expectations, in the **Kernel** code section, modify the Kernel code and then click **Speedup Test** to start a new iteration.
     If there are multiple iterations, you can select one of these iterations and click **Use this code** on this iteration. Once the corresponding Kernel code appears in the **Kernel** section, click **Download Kernel** at the top to download the Kernel code for future use.
-    - Click **Smart Prompt**, modify the prompts, and then click **Increase Speedup Ratio** to generate the new Kernel.
 
 - If the **Correctness Test** turns red, you can manually modify the Kernel code in the **Kernel** section, and then click **Correctness Test** to start another iteration till the correctness is passed, and download the Kernel.
 
