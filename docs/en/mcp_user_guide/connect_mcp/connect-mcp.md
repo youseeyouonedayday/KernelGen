@@ -16,9 +16,12 @@ To retrieve your token, follow these steps:
 3. When the page is scrolled down to the bottom, click **MCP Service**.
    ![alt text](../../assets/images/building-methods.png)
 
-4. Click **Workspace** to log into the KernelGen Web Platform.
-
-5. In the **Access Token** section on the right, click the eye icon to view the Bearer token and click **Copy** to copy it to the clipboard and save it for later use.
+4. In the **Access Token** section on the right, click the eye icon to view the Bearer token and click **Copy** to copy it to the clipboard and save it for later use.
+   
+   ```{note}
+   Accessing the token requires you to log in to the KernelGen Web Platform. For login steps, see Login.
+   ```
+   
 
    ![](<images/KernelGen MCP Server User Guide-image-2.png>)
 
@@ -27,12 +30,12 @@ To retrieve your token, follow these steps:
    ```{code-block} json
    Authorization: Bearer <your Token>
    ```
-   
+
 **Note**:
 
-* Treat your Bearer Token as a sensitive credential. Do not share it or expose it in public repositories.
+- Treat your Bearer Token as a sensitive credential. Do not share it or expose it in public repositories.
 
-* Tokens have an expiration time. If your token has expired and you cannot connect to the KernelGen MCP Server, you can log in to the KernelGen Web Platform to copy a new one.
+- Tokens have an expiration time. If your token has expired and you cannot connect to the KernelGen MCP Server, you can log in to the KernelGen Web Platform to copy a new one.
 
 
 ```{toctree}

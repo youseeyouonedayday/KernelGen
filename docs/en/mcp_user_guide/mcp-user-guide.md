@@ -4,9 +4,6 @@ This section introduces how to use VS Code (and Copilot), Claude Code, and OpenC
 
 Regarding generating operators for FlagGems or vLLM project, optimizing operators, specializing operators across hardware platforms, and generating TLE operators, see *KernelGen MCP Server Use Cases*.
 
-
-
-
 ```{toctree}
 :maxdepth: 2
 

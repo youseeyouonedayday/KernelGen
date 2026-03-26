@@ -2,11 +2,11 @@
 
 To connect Claude Code to the KernelGem MCP server, perform the following steps:
 
-Two methods are available to register the KernelGen MCP server to Claude Code. No matter which method you use, you must fully understand the scope configuration of Claude Code. For more information, see https://code.claude.com/docs/en/settings#&#x20;
+Two methods are available to register the KernelGen MCP server to Claude Code. No matter which method you use, you must fully understand the scope configuration of Claude Code. For more information, see https://code.claude.com/docs/en/settings#
 
-1. Configure and connect to the KernelGen MCP server.&#x20;
+1. Configure and connect to the KernelGen MCP server.
 
-   * **Option 1&#x20;**(Recommended）: Use the Server-Sent Events (SSE) protocol and Bear authentication to register the KernelGen MCP server with Claude Code.&#x20;
+   - **Option 1** (Recommended): Use the Server-Sent Events (SSE) protocol and Bear authentication to register the KernelGen MCP server with Claude Code.
 
      ```json
      claude mcp add \
@@ -22,17 +22,17 @@ Two methods are available to register the KernelGen MCP server to Claude Code. N
        --header "Authorization: Bearer <token>"
      ```
 
-     **Note**:&#x20;
+     **Note**:
 
-     * local (default):`.claude/settings.local.json`, only yourself in the current project.
+     - local (default):`.claude/settings.local.json`, only yourself in the current project.
 
-     * project: `.mcp.json`, team sharing, submitted to git.
+     - project: `.mcp.json`, team sharing, submitted to git.
 
-     * user: `~/.claude/settings.json`, all your projects.&#x20;
+     - user: `~/.claude/settings.json`, all your projects.
 
-     For more information, see https://code.claude.com/docs/en/settings#&#x20;
+     For more information, see https://code.claude.com/docs/en/settings#
 
-   * **Option 2**: Manually modify the configuration file.&#x20;
+   - **Option 2**: Manually modify the configuration file.
 
      Edit `~/.claude/settings.json` as follows:
 
@@ -50,11 +50,11 @@ Two methods are available to register the KernelGen MCP server to Claude Code. N
      }
      ```
 
-     **Note**:&#x20;
+     **Note**:
 
-     * For personal use, use the command `--scope user`(Recommended);
+     - For personal use, use the command `--scope user`(Recommended);
 
-     * For team sharing, use the command `--scope project` (Do not submit tokens to Git).
+     - For team sharing, use the command `--scope project` (Do not submit tokens to Git).
 
 2. Verify the connection
 
