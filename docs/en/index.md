@@ -100,7 +100,7 @@ mcp_user_guide/mcp-user-guide.md
 :hidden:
 
 web_use_case/web-use-case-pr.md
-mcp_use_case/mcp-use-case.md
+skills_use_case/skills-use-case.md
 ```
 
 ```{toctree}

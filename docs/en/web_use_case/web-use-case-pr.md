@@ -1,4 +1,4 @@
-# Contribute Kernel to FlagGems
+# Web Platform Use Cases
 
 This use case introduces how to contribute the KernelGen generated **Kernel**, **CUDA Implementation**, **Correctness Test**, and **Speedup Ratio Test** codes to [FlagGems](https://github.com/flagos-ai/FlagGems) GitHub.
 
@@ -7,7 +7,7 @@ The process is as follows:
 1. Generate **Kernel**, **CUDA Implementation**, **Correctness Test**, and **Speedup Ratio Test** codes. For more information, see [](../user_guide/generate-triton-kernels-through-your-operator-definitions.md).
 2. Save the codes as files, respectively.
 3. Convert the files.
-4. Contribute the conveted file to FlagGems GitHub.
+4. Contribute the converted file to FlagGems GitHub.
 
 ```{note}
 The predefined use case **ReLU** in KernelGen is used as an example. In this use case, we assume that the ReLU operator is a new operator you just generated though KernelGen but you have not contributed it to FlagGems GitHub.
@@ -36,13 +36,13 @@ To convert files generate from KernelGen:
     git clone https://github.com/flagos-ai/KernelGen
     ```
 
-3. Navigate to the `tools` directory of the KernelGen project.
+4. Navigate to the `tools` directory of the KernelGen project.
 
     ```bash
     cd /your/project/KernelGen/tools
     ```
 
-4. Run the following script to convert these files into two FlagGems-compatible files.
+5. Run the following script to convert these files into two FlagGems-compatible files.
 
     ```bash
     python kernelgen_to_flaggems.py \

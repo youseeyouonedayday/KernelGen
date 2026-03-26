@@ -4,21 +4,19 @@ Using VS Code (and Copilot), Claude Code, or OpenClaw to generate an operator fo
 
 1. Configure the KernelGen MCP server. See [Configure and connect to KernelGen MCP server](https://file+.vscode-resource.vscode-cdn.net/d:/kernelgen20/docs/en/mcp_user_guide/connect_mcp/connect-mcp.md).
 
-2. Download and install the `kernelgen-flagos` skill from [FlagOS Skills Github](https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos).&#x20;
+2. Download and install the `kernelgen-flagos` skill from [FlagOS Skills Github](https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos).
 
 3. Invoke the `kernelgen-flagos` skill through one of the following methods:
 
-   * Use the slash command `/kernelgen-flagos`&#x20;
+   - Use the slash command `/kernelgen-flagos`
 
-   * Include the name in your prompt
+   - Include the name in your prompt
 
  For skill installation, see the corresponding documentation:
 
-   - [VS Code documentation](https://code.visualstudio.com/docs/copilot/customization/agent-skills)
-
-   - [Claude Code documentation](https://code.claude.com/docs/en/skills)
-
-   - [OpenClaw documentation](https://docs.openclaw.ai/tools/skills)
+- [VS Code documentation](https://code.visualstudio.com/docs/copilot/customization/agent-skills)
+- [Claude Code documentation](https://code.claude.com/docs/en/skills)
+- [OpenClaw documentation](https://docs.openclaw.ai/tools/skills)
 
 - Chat with the AI agent about your requirements for generating the ReLU operator.
 

@@ -60,15 +60,15 @@ This section introduces how to use VS Code (and GitHub Copilot), Claude Code, an
 
 1. Invoke the `kernelgen-flagos` skill through one of the following methods:
 
-   * Use the slash command `/kernelgen-flagos`&#x20;
+   - Use the slash command `/kernelgen-flagos`&#x20;
 
-   * Include the name in your prompt
+   - Include the name in your prompt
 
 2. Chat with OpenClaw and provide requirements for generating the ReLU operator through natural language.
 
-   * **Typical requirements**: Operator name（mandatory）, task description (mandatory), input parameters and data type, output parameters and data type, testing devices, and the number of iterations of operator optimization.
+   - **Typical requirements**: Operator name（mandatory）, task description (mandatory), input parameters and data type, output parameters and data type, testing devices, and the number of iterations of operator optimization.
 
-   * **Requirement example**: "**The operator name is ReLU**, and the classification is pointwise. There is 1 input parameter: input: torch. Tensor, the input tensor, which can be of any shape and data type, usually floating-point type, and requires the application of the ReLU activation function. There is 1 output. Output: torch. Tensor, the output tensor after ReLU activation, with the same shape as input, and the logic is max(0, input), i.e., all negative values become 0, and positive values remain unchanged. Use MetaX."
+   - **Requirement example**: "**The operator name is ReLU**, and the classification is pointwise. There is 1 input parameter: input: torch. Tensor, the input tensor, which can be of any shape and data type, usually floating-point type, and requires the application of the ReLU activation function. There is 1 output. Output: torch. Tensor, the output tensor after ReLU activation, with the same shape as input, and the logic is max(0, input), i.e., all negative values become 0, and positive values remain unchanged. Use MetaX."
 
 
 Regarding generating operators for FlagGems or vLLM project, optimizing operators, specializing operators across hardware platforms, and TLE-related use cases, see *KernelGen Skills Use Cases*.

@@ -1,4 +1,4 @@
-# KerngelGen Skills Use Cases
+# KernelGen Skills Use Cases
 
 This section introduces how to generate kernels for any project, optimize and specialize them across hardware platforms using VS Code, Claude Code, or OpenClaw.&#x20;
 
