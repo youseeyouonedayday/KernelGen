@@ -4,7 +4,7 @@
 
 ## 步骤
 
-1. 配置 KernelGen MCP Server。请参阅[配置并连接 KernelGen MCP Server](../mcp_user_guide/connect_mcp/connect-mcp.md)。
+1. 配置 KernelGen MCP 服务器。请参阅[配置并连接 KernelGen MCP 服务器](../mcp_user_guide/connect_mcp/connect-mcp.md)。
 
 2. 从 [FlagOS Skills Github](https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos) 下载并安装 `kernelgen-flagos` 技能。
 

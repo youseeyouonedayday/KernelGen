@@ -1,6 +1,6 @@
 # 前提条件
 
-在将您的 AI 智能体配置并连接至 KernelGen MCP Server 之前，您必须先从 KernelGen Web 平台获取 Bearer Token。
+在将您的 AI 智能体配置并连接至 KernelGen MCP 服务器之前，您必须先从 KernelGen Web 平台获取 Bearer Token。
 
 请按以下步骤获取 Token：
 
@@ -31,4 +31,4 @@
 
 - 请将 Bearer Token 视为敏感凭证，切勿共享或在公开代码仓库中暴露。
 
-- Token 具有有效期。如果 Token 已过期且无法连接 KernelGen MCP Server，您可以登录 KernelGen Web 平台获取新的 Token。
+- Token 具有有效期。如果 Token 已过期且无法连接 KernelGen MCP 服务器，您可以登录 KernelGen Web 平台获取新的 Token。
