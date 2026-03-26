@@ -7,7 +7,7 @@
 KernelGen Web Platform and KernelGen MCP Server platforms support generating, optimizing, and specializing operators through one of the following methods:
 
 - KernelGen Web Platform
-- KernelGen MCP Server and its MCP tools: All MCP tools are integrated into the MCP server. Users can invoke the MCP server to invoke the integrated MCP tools.
+- KernelGen MCP Server and its MCP tools: All MCP tools are integrated into the MCP server.
 - KernelGen MCP Server and KernelGen skills: All KernelGen skills are bundled in the kernelgen-flagos skill. Users can invoke the bundled skill to invoke the sub-skills.
 
 ## Supported hardware platforms
@@ -23,7 +23,7 @@ KernelGen Web Platform and KernelGen MCP Server internally integrate support for
 ## Where to Begin?
 
 - New to KernelGen?
-If you're just getting started and want to quickly explore KernelGen, begin with the Getting Started guide.
+If you're just getting started and want to quickly explore KernelGen, begin with the *Getting Started* guide.
 - Developing custom operators?
 If you're an operator developer, jump straight into the following guides:
   - *KernelGen Web Platform User Guide*

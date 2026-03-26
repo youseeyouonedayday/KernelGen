@@ -11,12 +11,10 @@ To retrieve your token, follow these steps:
 1. Open [https://KernelGen.flagos.io/login](https://kernelgen.flagos.io/login) in your browser.
 
 2. Click **Start Building for Free.**
-
-   ![](<images/KernelGen MCP Server User Guide-image.png>)
+   ![alt text](../../assets/images/start-building-from-free.png)
 
 3. When the page is scrolled down to the bottom, click **MCP Service**.
-
-   ![](<images/KernelGen MCP Server User Guide-image-1.png>)
+   ![alt text](../../assets/images/building-methods.png)
 
 4. Click **Workspace** to log into the KernelGen Web Platform.
 
@@ -26,10 +24,10 @@ To retrieve your token, follow these steps:
 
    You can then use this token in the `Authorization` header of your requests as follows:
 
-   ```json
+   ```{code-block} json
    Authorization: Bearer <your Token>
    ```
-
+   
 **Note**:
 
 * Treat your Bearer Token as a sensitive credential. Do not share it or expose it in public repositories.

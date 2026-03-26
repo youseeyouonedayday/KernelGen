@@ -11,5 +11,6 @@ Regarding generating operators for FlagGems or vLLM project, optimizing operator
 :maxdepth: 2
 
 
-
+mcp_tool/mcp-tool.md
+connect_mcp/connect-mcp.md
 ```
