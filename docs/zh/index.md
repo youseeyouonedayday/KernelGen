@@ -31,27 +31,27 @@
 [了解更多 »](web_user_guide/web_user-guide)
 :::
 
-:::{grid-item-card} {octicon}`book;1.5em;sd-mr-1` MCP 用户指南
+:::{grid-item-card} {octicon}`book;1.5em;sd-mr-1` KernelGen MCP 用户指南
 :link: mcp_user_guide/mcp-user-guide
 :link-type: doc
 
 指导您如何通过 MCP Server 和工具使用自然语言提示构建算子定义，最终产出 Kernel。
 
 +++
-[了解更多 »](mcp_user_guide/mcp_user-guide)
+[了解更多 »](mcp_user_guide/mcp-user-guide)
 :::
 
-:::{grid-item-card} {octicon}`book;1.5em;sd-mr-1` Skills 用户指南
+:::{grid-item-card} {octicon}`book;1.5em;sd-mr-1` KernelGen Skills 用户指南
 :link: skills_user_guide/skills-user-guide
 :link-type: doc
 
 指导您如何通过技能（Skills）使用自然语言提示构建算子定义，最终产出 Kernel。
 
 +++
-[了解更多 »](skills_user_guide/skills_user-guide)
+[了解更多 »](skills_user_guide/skills-user-guide)
 :::
 
-:::{grid-item-card} {octicon}`broadcast;1.5em;sd-mr-1` Web 平台使用案例
+:::{grid-item-card} {octicon}`broadcast;1.5em;sd-mr-1` KernelGen Web 平台使用案例
 :link: web_use_case/web-use-case-pr
 :link-type: doc
 
@@ -61,14 +61,14 @@
 [了解更多 »](web_use_case/web-use-case-pr)
 :::
 
-:::{grid-item-card} {octicon}`broadcast;1.5em;sd-mr-1` Skills 使用案例
+:::{grid-item-card} {octicon}`broadcast;1.5em;sd-mr-1` KernelGen Skills 使用案例
 :link: skills_use_case/skills-use-case
 :link-type: doc
 
 指导您如何针对各类场景生成、优化和特化算子。
 
 +++
-[了解更多 »](skill_use_case/skills_use-case-pr)
+[了解更多 »](skill_use_case/skills-use-case-pr)
 :::
 
 ::::

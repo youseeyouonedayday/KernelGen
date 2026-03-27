@@ -1,4 +1,4 @@
-# 使用 VS Code 连接 KernelGen MCP Server
+# 使用 VS Code 连接 KernelGen MCP 服务器
 
 如果您使用 VS Code，请注意以下要求：
 
@@ -6,9 +6,9 @@
 
 * 需安装 GitHub Copilot 扩展。
 
-如需将 VS Code 连接至 KernelGen MCP Server，请执行以下步骤：
+如需将 VS Code 连接至 KernelGen MCP 服务器，请执行以下步骤：
 
-1. 配置 KernelGen MCP Server。在项目根目录下创建 `.VS Code/mcp.json` 文件。
+1. 配置 KernelGen MCP 服务器。在项目根目录下创建 `.VS Code/mcp.json` 文件。
 
    ```json
    {
@@ -24,11 +24,11 @@
    }
    ```
 
-2. 验证 VS Code 与 KernelGen MCP Server 之间的连接。
+2. 验证 VS Code 与 KernelGen MCP 服务器之间的连接。
 
-   1. 按 **Ctrl**+**Shift**+**P** 打开命令面板，输入并搜索"MCP: List Servers"，然后按 Enter，即可显示当前在 VS Code 中配置的所有 MCP Server 列表及其运行状态。
+   1. 按 **Ctrl**+**Shift**+**P** 打开命令面板，输入并搜索"MCP: List Servers"，然后按 Enter，即可显示当前在 VS Code 中配置的所有 MCP 服务器列表及其运行状态。
 
-   2. 验证 KernelGen MCP Server 的状态为 `connected`（已连接）。
+   2. 验证 KernelGen MCP 服务器的状态为 `connected`（已连接）。
 
 **注意**：
 

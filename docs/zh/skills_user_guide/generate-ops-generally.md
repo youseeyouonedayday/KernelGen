@@ -6,7 +6,7 @@
 
 ## 使用 VS Code 生成算子
 
-本节介绍如何使用 VS Code、KernelGen MCP Server 和 KernelGen Skills 生成 ReLU 算子。
+本节介绍如何使用 VS Code、KernelGen MCP 服务器和 KernelGen Skills 生成 ReLU 算子。
 
 ### **前提条件**
 
@@ -16,7 +16,7 @@
 
 ### **步骤**
 
-1. 配置 KernelGen MCP Server。请参阅[使用 VS Code 连接 KernelGen MCP Server](https://file+.vscode-resource.vscode-cdn.net/d:/kernelgen20/docs/en/mcp_user_guide/connect_mcp/vscode-connect-mcp.md)。
+1. 配置 KernelGen MCP Server。请参阅[使用 VS Code 连接 KernelGen MCP 服务器](https://file+.vscode-resource.vscode-cdn.net/d:/kernelgen20/docs/en/mcp_user_guide/connect_mcp/vscode-connect-mcp.md)。
 
 2. 从 [FlagOS Skills Github](https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos) 下载并安装 `kernelgen-flagos` 技能。有关技能安装方法，请参阅 [VS Code 文档](https://code.visualstudio.com/docs/copilot/customization/agent-skills)。
 
@@ -34,11 +34,11 @@
 
 ## 使用 Claude Code 生成算子
 
-本节介绍如何使用 Claude Code、KernelGen MCP Server 和 KernelGen Skills 生成 ReLU 算子。
+本节介绍如何使用 Claude Code、KernelGen MCP 服务器和 KernelGen Skills 生成 ReLU 算子。
 
 ### 步骤
 
-1. 配置 KernelGen MCP Server。请参阅[使用 Claude Code 连接 KernelGen MCP Server](https://file+.vscode-resource.vscode-cdn.net/d:/kernelgen20/docs/en/mcp_user_guide/connect_mcp/claudecode-connect-mcp.md)。
+1. 配置 KernelGen MCP Server。请参阅[使用 Claude Code 连接 KernelGen MCP 服务器](https://file+.vscode-resource.vscode-cdn.net/d:/kernelgen20/docs/en/mcp_user_guide/connect_mcp/claudecode-connect-mcp.md)。
 
 2. 从 [FlagOS Skills Github](https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos) 下载并安装 `kernelgen-flagos` 技能。有关技能安装方法，请参阅 [Claude Code 文档](https://code.claude.com/docs/en/skills)。
 
@@ -70,7 +70,7 @@
 
    有关技能安装方法，请参阅 [OpenClaw 文档](https://docs.openclaw.ai/tools/skills)。
 
-3. 配置 KernelGen MCP Server。请参阅[使用 OpenClaw 连接 KernelGen MCP Server](https://jwolpxeehx.feishu.cn/wiki/DcB6wnUlyiJzaHkmlUQcUNfcnpb#share-UQWNdyXCZokoFTxb8EXch8APnWg)。
+3. 配置 KernelGen MCP 服务器。请参阅[使用 OpenClaw 连接 KernelGen MCP 服务器](https://jwolpxeehx.feishu.cn/wiki/DcB6wnUlyiJzaHkmlUQcUNfcnpb#share-UQWNdyXCZokoFTxb8EXch8APnWg)。
 
 4. 通过以下任一方式调用 `kernelgen-flagos` 技能：
 

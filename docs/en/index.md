@@ -21,7 +21,7 @@ Have a quick view of KernelGen, and also some basic concepts.
 [Learn more »](KernelGen_overview/KernelGen-overview)
 :::
 
-:::{grid-item-card} {octicon}`book;1.5em;sd-mr-1` Web Platform User Guide
+:::{grid-item-card} {octicon}`book;1.5em;sd-mr-1` KernelGen Web Platform User Guide
 :link: web_user_guide/web-user-guide
 :link-type: doc
 
@@ -31,27 +31,27 @@ Guides you how to use natural language prompts to construct operator definitions
 [Learn more »](web_user_guide/web_user-guide)
 :::
 
-:::{grid-item-card} {octicon}`book;1.5em;sd-mr-1` MCP User Guide
+:::{grid-item-card} {octicon}`book;1.5em;sd-mr-1` KernelGen MCP User Guide
 :link: mcp_user_guide/mcp-user-guide
 :link-type: doc
 
 Guides you how to use natural language prompts to construct operator definitions and ultimately produce a Kernel through MCP server and tools.
 
 +++
-[Learn more »](mcp_user_guide/mcp_user-guide)
+[Learn more »](mcp_user_guide/mcp-user-guide)
 :::
 
-:::{grid-item-card} {octicon}`book;1.5em;sd-mr-1` Skills User Guide
+:::{grid-item-card} {octicon}`book;1.5em;sd-mr-1` KernelGen Skills User Guide
 :link: skills_user_guide/skills-user-guide
 :link-type: doc
 
 Guides you how to use natural language prompts to construct operator definitions and ultimately produce a Kernel through skills.
 
 +++
-[Learn more »](skills_user_guide/skills_user-guide)
+[Learn more »](skills_user_guide/skills-user-guide)
 :::
 
-:::{grid-item-card} {octicon}`broadcast;1.5em;sd-mr-1` Web Platform Use Cases
+:::{grid-item-card} {octicon}`broadcast;1.5em;sd-mr-1` KernelGen Web Platform Use Cases
 :link: web_use_case/web-use-case-pr
 :link-type: doc
 
@@ -61,14 +61,14 @@ Guides you how to contribute the KernelGen generated Kernel, Correctness Test, a
 [Learn more »](web_use_case/web-use-case-pr)
 :::
 
-:::{grid-item-card} {octicon}`broadcast;1.5em;sd-mr-1` Skills Use Cases
+:::{grid-item-card} {octicon}`broadcast;1.5em;sd-mr-1` KernelGen Skills Use Cases
 :link: skills_use_case/skills-use-case
 :link-type: doc
 
 Guides you how to generate, optimize, and specialize operators for various cases.
 
 +++
-[Learn more »](skill_use_case/skills_use-case-pr)
+[Learn more »](skill_use_case/skills-use-case)
 :::
 
 ::::
