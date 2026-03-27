@@ -19,11 +19,11 @@ To retrieve your token, follow these steps:
    ```
    
 
-   ![](<images/KernelGen MCP Server User Guide-image-2.png>)
+   ![alt text](../../assets/images/token.png)
 
    You can then use this token in the `Authorization` header of your requests as follows:
 
-   ```{code-block} json
+   ```{code-block} text
    Authorization: Bearer <your Token>
    ```
 
