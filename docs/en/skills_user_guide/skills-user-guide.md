@@ -62,12 +62,4 @@ This section introduces how to use VS Code (and GitHub Copilot), Claude Code, an
 
 Regarding generating operators for FlagGems or vLLM project, optimizing operators, specializing operators across hardware platforms, and TLE-related use cases, see *KernelGen Skills Use Cases*.
 
-```{toctree}
-:maxdepth: 2
 
-
-configure-and-connect-mcp.md
-generate-ops-generally.md
-
-
-```

@@ -62,10 +62,4 @@
 
 有关为 FlagGems 或 vLLM 项目生成算子、优化算子、跨硬件平台特化算子以及 TLE 相关使用案例，请参阅《KernelGen Skills 使用案例》。
 
-```{toctree}
-:maxdepth: 2
 
-
-configure-and-connect-mcp.md
-generate-ops-generally.md
-```
