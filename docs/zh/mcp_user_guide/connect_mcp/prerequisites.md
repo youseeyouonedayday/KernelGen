@@ -19,11 +19,11 @@
    ```
    
 
-   ![](<images/KernelGen MCP Server User Guide-image-2.png>)
+   ![MCP服务Token获取](../../assets/images/KernelGen-MCP-Server-User-Guide-image-2.png)
 
    之后，您可以在请求的 `Authorization` 请求头中按如下方式使用该 Token：
 
-   ```{code-block} json
+   ```http
    Authorization: Bearer <your Token>
    ```
 

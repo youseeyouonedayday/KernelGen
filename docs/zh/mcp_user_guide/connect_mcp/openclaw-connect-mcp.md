@@ -16,7 +16,7 @@
         "Authorization": "Bearer <your Token>"
 ```
 
-##### 使用 Cursor 连接 KernelGen MCP Server
+## 使用 Cursor 连接 KernelGen MCP Server
 
 如需将 Cursor 连接至 KernelGen MCP 服务器，请按如下方式配置 `mcp.json` 文件：
 

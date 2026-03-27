@@ -8,7 +8,7 @@
 
    - **方式一**（推荐）：使用 Server-Sent Events（SSE）协议和 Bearer 认证，将 KernelGen MCP 服务器注册到 Claude Code。
 
-     ```json
+     ```bash
      claude mcp add \
        --transport sse \
        --scope user \
