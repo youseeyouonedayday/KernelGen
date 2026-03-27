@@ -1,4 +1,4 @@
-# Web Platform Use Cases
+# KernelGen Web Platform Use Cases
 
 This use case introduces how to contribute the KernelGen generated **Kernel**, **CUDA Implementation**, **Correctness Test**, and **Speedup Ratio Test** codes to [FlagGems](https://github.com/flagos-ai/FlagGems) GitHub.
 

@@ -1,4 +1,4 @@
-# Web Platform User Guide
+# KernelGen Web Platform User Guide
 
 This section introduces how to use your semantic operator definitions to generate Kernel.
 
