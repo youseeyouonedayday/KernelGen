@@ -2,7 +2,7 @@
 
 本节介绍如何使用 VS Code（及 GitHub Copilot）、Claude Code 和 OpenClaw 生成算子。
 
-有关为 FlagGems 或 vLLM 项目生成算子、优化算子、跨硬件平台专化算子以及 TLE 相关使用案例，请参阅《KernelGen Skills 使用案例》。
+有关为 FlagGems 或 vLLM 项目生成算子、优化算子、跨硬件平台特化算子以及 TLE 相关使用案例，请参阅《KernelGen Skills 使用案例》。
 
 ## 使用 VS Code 生成算子
 

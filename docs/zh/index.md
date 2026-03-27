@@ -65,7 +65,7 @@
 :link: skills_use_case/skills-use-case
 :link-type: doc
 
-指导您如何针对各类场景生成、优化和专化算子。
+指导您如何针对各类场景生成、优化和特化算子。
 
 +++
 [了解更多 »](skill_use_case/skills_use-case-pr)
@@ -76,7 +76,7 @@
 ---
 
 ```{toctree}
-:caption: 📑 Release Notes
+:caption: 📑 发版说明
 :maxdepth: 5
 :hidden:
 

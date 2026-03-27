@@ -4,7 +4,7 @@
 
 流程如下：
 
-1. 生成 **Kernel**、**CUDA版基准实现**、**正确性测例** 和 **加速比测例** 代码。更多信息请参阅 [](../user_guide/generate-triton-kernels-through-your-operator-definitions.md)。
+1. 生成 **Kernel**、**CUDA版基准实现**、**正确性测例** 和 **加速比测例** 代码。更多信息请参阅 [通过您的算子定义生成Kernel](../web_user_guide/generate-triton-kernels-through-your-operator-definitions.md)。
 2. 将这些代码分别保存为文件。
 3. 转换这些文件。
 4. 将转换后的文件贡献到 FlagGems GitHub。
@@ -42,7 +42,7 @@
     cd /your/project/KernelGen/tools
     ```
 
-4. 运行 `convert.py` 脚本，将文件转换为两个与 FlagGems 兼容的文件。
+4. 运行以下脚本，将文件转换为两个与 FlagGems 兼容的文件。
 
     ```bash
     python kernelgen_to_flaggems.py \

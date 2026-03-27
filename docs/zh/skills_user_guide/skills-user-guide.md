@@ -2,7 +2,7 @@
 
 本节介绍如何使用 VS Code（及 Copilot）、Claude Code 和 OpenClaw 连接 KernelGen MCP Server，并使用 KernelGen Skills 进行通用算子生成。
 
-有关为 FlagGems 或 vLLM 项目生成算子、优化算子、跨硬件平台专化算子以及生成 TLE 算子的内容，请参阅《KernelGen Skills 使用案例》。
+有关为 FlagGems 或 vLLM 项目生成算子、优化算子、跨硬件平台特化算子以及生成 TLE 算子的内容，请参阅《KernelGen Skills 使用案例》。
 
 ## 通用算子生成
 
@@ -60,7 +60,7 @@
 
    - **需求示例**："**算子名称为 ReLU**，分类为逐元素（pointwise）。有 1 个输入参数：input: torch.Tensor，输入张量，可以是任意形状和数据类型，通常为浮点类型，需要应用 ReLU 激活函数。有 1 个输出。Output: torch.Tensor，经过 ReLU 激活后的输出张量，形状与输入相同，逻辑为 max(0, input)，即所有负值变为 0，正值保持不变。使用沐曦（MetaX）。"
 
-有关为 FlagGems 或 vLLM 项目生成算子、优化算子、跨硬件平台专化算子以及 TLE 相关使用案例，请参阅《KernelGen Skills 使用案例》。
+有关为 FlagGems 或 vLLM 项目生成算子、优化算子、跨硬件平台特化算子以及 TLE 相关使用案例，请参阅《KernelGen Skills 使用案例》。
 
 ```{toctree}
 :maxdepth: 2

@@ -1,6 +1,6 @@
 # KernelGen Skills 使用案例
 
-本节介绍如何使用 VS Code、Claude Code 或 OpenClaw，通过 KernelGen Skills 为任意项目生成 Kernel，以及跨硬件平台进行优化和专化。
+本节介绍如何使用 VS Code、Claude Code 或 OpenClaw，通过 KernelGen Skills 为任意项目生成 Kernel，以及跨硬件平台进行优化和特化。
 
 
 ## 前提条件
