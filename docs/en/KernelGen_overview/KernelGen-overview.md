@@ -4,7 +4,7 @@
 
 ```{toctree}
 
-Features.md
+kernelgen-features.md
 supported-hardware-platforms.md
 where-to-begin.md
 workflow.md
