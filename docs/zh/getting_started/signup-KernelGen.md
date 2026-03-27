@@ -4,9 +4,9 @@
 
 1. 在浏览器中打开 <https://KernelGen.flagos.io/login>。
 2. 点击**免费开始构建**。
-   ![alt text](../assets/images/start-building-from-free.png)
+   ![alt text](../assets/images/start-building-from-free-zh.png)
 3. 向下滚动页面至底部，点击 **Web 平台**。
-   ![alt text](../assets/images/building-methods.png)
+   ![alt text](../assets/images/building-methods-zh.png)
 4. 选择通过手机号或电子邮件地址注册：
 
     {style=lower-alpha}

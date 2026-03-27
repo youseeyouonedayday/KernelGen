@@ -7,10 +7,10 @@
 1. 在浏览器中打开 [https://KernelGen.flagos.io/login](https://kernelgen.flagos.io/login)。
 
 2. 点击**免费开始构建**。
-   ![alt text](../../assets/images/start-building-from-free.png)
+   ![alt text](../../assets/images/start-building-from-free-zh.png)
 
 3. 向下滚动页面至底部，点击 **MCP 服务**。
-   ![alt text](../../assets/images/building-methods.png)
+   ![alt text](../../assets/images/building-methods-zh.png)
 
 4. 在右侧的 **Access Token** 区域，点击眼睛图标查看 Bearer Token，然后点击**复制**将其复制到剪贴板，并妥善保存以备后续使用。
    

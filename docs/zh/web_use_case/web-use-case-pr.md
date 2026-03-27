@@ -1,4 +1,4 @@
-# 向 FlagGems 贡献 Kernel
+# Web 平台使用案例
 
 本用例介绍如何将 KernelGen 生成的 **Kernel**、**CUDA版基准实现**、**正确性测例** 和 **加速比测例** 代码贡献到 [FlagGems](https://github.com/flagos-ai/FlagGems) GitHub。
 
