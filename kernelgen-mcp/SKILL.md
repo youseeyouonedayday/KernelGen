@@ -1,13 +1,12 @@
 ---
 name: kernelgen-flagos
 description: >
-  Unified GPU kernel operator generation skill. Automatically detects the target repository type
-  (FlagGems, vLLM, or general Python/Triton) and dispatches to the appropriate specialized
-  sub-skill. Also includes a feedback submission sub-skill for bug reports. Use this skill when
-  the user wants to generate a GPU kernel operator, create a Triton kernel, or says things like
-  "generate an operator", "create a kernel for X", or "/kernelgen-flagos". This single skill replaces
-  the need to install kernelgen-general, kernelgen-for-flaggems, kernelgen-for-vllm, and
-  kernelgen-submit-feedback separately.
+  Unified GPU kernel operator generation and optimization skill. Automatically detects the target
+  repository type (FlagGems, vLLM, or general Python/Triton) and dispatches to the appropriate
+  specialized sub-skill. Includes operator generation, MCP-based iterative optimization, and
+  feedback submission sub-skills. Use this skill when the user wants to generate or optimize a
+  GPU kernel operator, create a Triton kernel, or says things like "generate an operator",
+  "create a kernel for X", "optimize triton kernel", or "/kernelgen-flagos".
 argument-hint: "<operator_name> [--func-type <type>]"
 user-invokable: true
 compatibility: "Python 3.8+, PyTorch with CUDA, Triton"
@@ -15,7 +14,7 @@ metadata:
   version: "1.0.0"
   author: flagos-ai
   category: gpu-kernel-generation
-  tags: [kernelgen, triton, gpu, mcp, operator-generation, flaggems, vllm, feedback]
+  tags: [kernelgen, triton, gpu, mcp, operator-generation, operator-optimization, flaggems, vllm, feedback]
 allowed-tools:
   - Bash
   - Bash(gh:*)
@@ -32,13 +31,22 @@ allowed-tools:
 
 # kernelgen-flagos — Unified GPU Operator Generation Skill
 
-This is a **unified entry point** that bundles four sub-skills into one:
+This is a **unified entry point** that bundles generation and optimization sub-skills into one:
 
 | Sub-skill file | Purpose |
 |---|---|
-| `kernelgen-general.md` | Generate GPU kernels for **any** Python/Triton repository |
-| `kernelgen-for-flaggems.md` | Specialized generation for **FlagGems** repositories |
-| `kernelgen-for-vllm.md` | Specialized generation for **vLLM** repositories |
+| **Generation** | |
+| `kernelgen-generate.md` | Generate GPU kernels for **any** Python/Triton repository |
+| `kernelgen-generate-for-flaggems.md` | Specialized generation for **FlagGems** repositories |
+| `kernelgen-generate-for-vllm.md` | Specialized generation for **vLLM** repositories |
+| **Optimization** | |
+| `kernelgen-optimize.md` | Optimize existing Triton kernels via MCP iterative optimization (general purpose) |
+| `kernelgen-optimize-for-flaggems.md` | Optimize Triton operators and integrate into **FlagGems** (3 modes: built-in/external/experimental) |
+| `kernelgen-optimize-for-vllm.md` | Optimize Triton operators and integrate into **vLLM** (with CustomOp registration) |
+| **Platform Specialization** | |
+| `kernelgen-specialize.md` | Specialize Triton operators to target platforms (e.g., GPU → Ascend NPU) via MCP `specialize_kernel` |
+| `kernelgen-specialize-for-flaggems.md` | Platform specialization + **FlagGems** integration (4 modes: vendor-ops/vendor-fused/override-builtin/experimental) |
+| **Feedback** | |
 | `kernelgen-submit-feedback.md` | Submit bug reports and feedback via GitHub or email |
 
 All sub-skill files are located in the **same directory** as this `SKILL.md` file.
@@ -81,18 +89,40 @@ from this skill's directory, then **follow the instructions in that file exactly
 Glob tool to find the path:
 
 ```
-Glob: **/skills/kernelgen-flagos/kernelgen-general.md
+Glob: **/skills/kernelgen-flagos/kernelgen-generate.md
 ```
 
 Then use the Read tool to read the matched path.
 
 #### Decision Table
 
+**Generation requests** (user wants to create/generate a new operator):
+
 | Detection Result | Action |
 |---|---|
-| FlagGems repository detected | Read `kernelgen-for-flaggems.md` and follow it |
-| vLLM repository detected | Read `kernelgen-for-vllm.md` and follow it |
-| Neither detected (or unknown) | Read `kernelgen-general.md` and follow it |
+| FlagGems repository detected | Read `kernelgen-generate-for-flaggems.md` and follow it |
+| vLLM repository detected | Read `kernelgen-generate-for-vllm.md` and follow it |
+| Neither detected (or unknown) | Read `kernelgen-generate.md` and follow it |
+
+**Optimization requests** (user wants to optimize an existing operator, mentions "optimize", "speedup", "improve performance"):
+
+| Detection Result | Action |
+|---|---|
+| FlagGems repository detected | Read `kernelgen-optimize-for-flaggems.md` and follow it |
+| vLLM repository detected | Read `kernelgen-optimize-for-vllm.md` and follow it |
+| Neither detected (or unknown) | Read `kernelgen-optimize.md` and follow it |
+
+**Specialization requests** (user wants to migrate/specialize an operator to a different platform, mentions "specialize", "migrate to Ascend/NPU", "platform migration"):
+
+| Detection Result | Action |
+|---|---|
+| FlagGems repository detected | Read `kernelgen-specialize-for-flaggems.md` and follow it |
+| Neither detected (or unknown) | Read `kernelgen-specialize.md` and follow it |
+
+**Feedback requests**:
+
+| Detection Result | Action |
+|---|---|
 | User reports a bug or requests feedback submission | Read `kernelgen-submit-feedback.md` and follow it |
 
 **Important rules:**
@@ -104,7 +134,9 @@ Then use the Read tool to read the matched path.
 5. If the user explicitly requests a specific sub-skill (e.g., "use the FlagGems version"),
    honor that request regardless of auto-detection results.
 6. **CRITICAL — MCP is mandatory**: ALL operator code generation MUST go through the
-   `mcp__kernelgen-mcp__generate_operator` MCP tool. NEVER generate Triton kernels, PyTorch
+   `mcp__kernelgen-mcp__generate_kernel` MCP tool. Optimization uses
+   `mcp__kernelgen-mcp__optimize_kernel`, and platform specialization uses
+   `mcp__kernelgen-mcp__specialize_kernel`. NEVER generate Triton kernels, PyTorch
    wrappers, or operator implementations yourself. If MCP is not configured, not reachable,
    or fails after all retries, STOP and report the issue — do NOT fall back to writing code
    manually.
@@ -124,11 +156,17 @@ or asks to submit feedback about the skill:
 ## Quick Reference for Users
 
 ```bash
+# === Generation ===
 # Generate a kernel operator (auto-detects repo type)
 /kernelgen-flagos relu
 
 # Generate with explicit function type
 /kernelgen-flagos rms_norm --func-type normalization
+
+# === Optimization ===
+# Optimize an existing Triton kernel (auto-detects repo type)
+# Just say "optimize the relu kernel" or "improve kernel performance"
+# The skill will automatically dispatch to the right optimization sub-skill
 
 # The skill will automatically:
 # - Detect if you're in a FlagGems repo → use FlagGems-specific workflow

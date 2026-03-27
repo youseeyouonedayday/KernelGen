@@ -10,13 +10,18 @@
 
 Writing high-performance GPU kernels is complex and error-prone. Different projects (FlagGems, vLLM, custom Triton repos) each have unique conventions for operator implementation, testing, and registration. Previously, users needed to install separate skills for each project type.
 
-This unified skill bundles **four sub-skills** into one package, so users only need a single install:
+This unified skill bundles **nine sub-skills** into one package, so users only need a single install:
 
 | Sub-skill | Purpose |
 |---|---|
-| **kernelgen-general** | Generate GPU kernels for any Python/Triton repository |
-| **kernelgen-for-flaggems** | Specialized for FlagGems (`pointwise_dynamic`, `_FULL_CONFIG`, categorized tests) |
-| **kernelgen-for-vllm** | Specialized for vLLM (SPDX headers, `init_logger`, `@triton.autotune`, custom op registration) |
+| **kernelgen-generate** | Generate GPU kernels for any Python/Triton repository |
+| **kernelgen-generate-for-flaggems** | Specialized for FlagGems (`pointwise_dynamic`, `_FULL_CONFIG`, categorized tests) |
+| **kernelgen-generate-for-vllm** | Specialized for vLLM (SPDX headers, `init_logger`, `@triton.autotune`, custom op registration) |
+| **kernelgen-optimize** | General-purpose Triton kernel optimization via MCP iterative loop |
+| **kernelgen-optimize-for-flaggems** | FlagGems-specific optimization (3 modes: built-in/external/experimental operators) |
+| **kernelgen-optimize-for-vllm** | vLLM-specific optimization with CustomOp registration and integration |
+| **kernelgen-specialize** | Platform specialization for Triton operators (e.g., GPU to Ascend NPU migration) |
+| **kernelgen-specialize-for-flaggems** | Platform specialization with FlagGems framework integration |
 | **kernelgen-submit-feedback** | Submit bug reports via GitHub Issues or email |
 
 ### Usage
@@ -28,8 +33,8 @@ This unified skill bundles **four sub-skills** into one package, so users only n
 # Generate with explicit function type
 /kernelgen-flagos rms_norm --func-type normalization
 
-# Generate for any operator
-/kernelgen-flagos silu_and_mul
+# Optimize an existing kernel
+/kernelgen-flagos optimize <operator_source_dir> [target_speedup] [max_iterations]
 ```
 
 The skill will automatically:
@@ -53,13 +58,22 @@ If you encounter any issues during generation, say "submit feedback" or "report 
 ```
 ┌──────────────────────────────────────────────────────────┐
 │  Phase 1   Detect repository type                        │
-│            ├── FlagGems? → kernelgen-for-flaggems.md     │
-│            ├── vLLM?     → kernelgen-for-vllm.md        │
-│            └── Other?    → kernelgen-general.md          │
+│            ├── FlagGems? → kernelgen-generate-for-flaggems.md │
+│            ├── vLLM?     → kernelgen-generate-for-vllm.md    │
+│            └── Other?    → kernelgen-generate.md              │
 │                                                          │
 │  Phase 2   Execute the selected sub-skill workflow       │
 │            (environment check → MCP generation →         │
 │             code adaptation → testing → benchmarking)    │
+│                                                          │
+│  Phase 2b  Optimization (if requested)                   │
+│            ├── FlagGems? → kernelgen-optimize-for-flaggems.md │
+│            ├── vLLM?     → kernelgen-optimize-for-vllm.md    │
+│            └── Other?    → kernelgen-optimize.md              │
+│                                                          │
+│  Phase 2c  Platform specialization (if requested)        │
+│            ├── FlagGems? → kernelgen-specialize-for-flaggems.md │
+│            └── Other?    → kernelgen-specialize.md              │
 │                                                          │
 │  Phase 3   Feedback handling (on demand)                 │
 │            → kernelgen-submit-feedback.md                │
@@ -71,15 +85,20 @@ If you encounter any issues during generation, say "submit feedback" or "report 
 ## Directory Structure
 
 ```
-skills/kernelgen/
-├── SKILL.md                       # Unified entry point (routing logic)
-├── kernelgen-general.md           # General-purpose sub-skill
-├── kernelgen-for-flaggems.md      # FlagGems-specific sub-skill
-├── kernelgen-for-vllm.md          # vLLM-specific sub-skill
-├── kernelgen-submit-feedback.md   # Feedback submission sub-skill
-├── LICENSE.txt                    # Apache 2.0 license
-├── README.md                      # This document (English)
-└── README_zh.md                   # Chinese version
+skills/kernelgen-flagos/
+├── SKILL.md                              # Unified entry point (routing logic)
+├── kernelgen-generate.md                 # General-purpose generation sub-skill
+├── kernelgen-generate-for-flaggems.md    # FlagGems-specific generation sub-skill
+├── kernelgen-generate-for-vllm.md        # vLLM-specific generation sub-skill
+├── kernelgen-optimize.md                 # General-purpose optimization sub-skill
+├── kernelgen-optimize-for-flaggems.md    # FlagGems-specific optimization sub-skill
+├── kernelgen-optimize-for-vllm.md        # vLLM-specific optimization sub-skill
+├── kernelgen-specialize.md               # Platform specialization sub-skill
+├── kernelgen-specialize-for-flaggems.md  # FlagGems-specific specialization sub-skill
+├── kernelgen-submit-feedback.md          # Feedback submission sub-skill
+├── LICENSE.txt                           # Apache 2.0 license
+├── README.md                             # This document (English)
+└── README_zh.md                          # Chinese version
 ```
 
 ---
@@ -90,21 +109,41 @@ skills/kernelgen/
 
 The unified entry point. Contains routing logic that auto-detects the repository type (FlagGems, vLLM, or generic) and reads the appropriate sub-skill file to execute.
 
-### `kernelgen-general.md`
+### `kernelgen-generate.md`
 
 Full 10-step workflow for generating GPU kernel operators in any Python/Triton repository. Includes dynamic repo structure discovery, convention detection, and adaptive code placement.
 
-### `kernelgen-for-flaggems.md`
+### `kernelgen-generate-for-flaggems.md`
 
 9-step workflow specialized for FlagGems repositories. Handles `pointwise_dynamic` wrappers, promotion methods, `_FULL_CONFIG` registration, categorized test files, and FlagGems-specific conventions.
 
-### `kernelgen-for-vllm.md`
+### `kernelgen-generate-for-vllm.md`
 
 9-step workflow specialized for vLLM repositories. Handles SPDX license headers, `vllm.logger.init_logger`, `@triton.autotune`, custom op registration, and vLLM directory conventions.
 
 ### `kernelgen-submit-feedback.md`
 
 Feedback submission workflow. Collects bug reports with auto-detected environment info and submits via GitHub Issues (`gh` CLI) or email fallback.
+
+### `kernelgen-optimize.md`
+
+General-purpose Triton kernel optimization via MCP iterative loop. Analyzes existing kernels, identifies bottlenecks, and applies optimizations through multiple rounds until the target speedup is reached.
+
+### `kernelgen-optimize-for-flaggems.md`
+
+FlagGems-specific kernel optimization with 3 modes: optimize built-in operators in-place, optimize external operators and integrate into experimental_ops, or optimize existing experimental operators. Includes accuracy tests and performance benchmarks.
+
+### `kernelgen-optimize-for-vllm.md`
+
+vLLM-specific kernel optimization with CustomOp registration, accuracy tests, and performance benchmark integration. Optimizes Triton operators and automatically integrates them into the vLLM project.
+
+### `kernelgen-specialize.md`
+
+Platform specialization for Triton operators via MCP `specialize_kernel` tool. Migrates GPU Triton operators to target platforms (e.g., Huawei Ascend NPU), handling architecture differences, Grid configuration, UB overflow, and memory alignment.
+
+### `kernelgen-specialize-for-flaggems.md`
+
+Combines MCP platform specialization with FlagGems framework integration. Supports four integration modes: vendor-ops (default), vendor-fused, override-builtin, and experimental. Includes automated testing and performance benchmarking.
 
 ---
 
