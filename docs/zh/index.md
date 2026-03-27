@@ -109,5 +109,5 @@ skills_use_case/skills-use-case.md
 :maxdepth: 5
 :hidden:
 
-search-repo-list.md
+references/search-repo-list.md
 ```
