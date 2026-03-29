@@ -104,7 +104,7 @@ Prompt to OpenClaw to install the following skills different places:
 You need to prompt to OpenClaw to convert the skill to OpenClaw-compatible skill. 
 ```
 
-### Generate an operator
+## Generate an operator
 
 A typical prompt should include the following mandatory and optional elements: Operator name（mandatory）, task description (mandatory), input parameters and data type, output parameters and data type, testing devices, and the number of iterations of operator optimization.
 
