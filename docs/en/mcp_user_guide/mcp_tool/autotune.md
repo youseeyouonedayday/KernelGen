@@ -4,13 +4,17 @@ KernelGen Operator Development MCP Toolkit integrates an MCP tool for autotuning
 
 The autotune kernel function is supported on all testing devices. See [Supported Hardware Platforms](../../KernelGen_overview/KernelGen-overview.md). You can invoke this tool through AI agents, including VS Code (and Github Copilot), Cursor, Claude Code, and OpenClaw.
 
-**Prerequisites: configure the KernelGen Server, see [Configure and connect to KernelGen Operator Development MCP Toolkit](../connect_mcp/connect-mcp.md).
+If you haven’t connected to the KernelGen Operator Development MCP Toolkit, see [Configure and connect to KernelGen Operator Development MCP Toolkit](../connect_mcp/connect-mcp.md).
 
-**Example:** Chat with Copilot about your requirements for autotuning the rmsnorm operator.
+To autotune kernels, a typical prompt should include the following mandatory and optional elements:
 
-- **Typical requirements**: “Invoke MCP tools” (mandatory), operator name（mandatory）, task description (mandatory), testing device, the number of rounds of iterations, and speedup ratio.
+“Invoke MCP tools” (mandatory), operator name（mandatory）, task description (mandatory), testing device, the number of rounds of iterations, and speedup ratio.
 
-- **Requirement example**: "**Invoke MCP tools to iteratively generate the rmsnorm operator on MetaX**"
+Prompt example:
+
+```{code-block} shell
+Invoke MCP tools to iteratively generate the rmsnorm operator on MetaX.
+```
 
 **Note**:
 
