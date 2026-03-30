@@ -8,7 +8,7 @@ Operator name（mandatory）, task description (mandatory), and optimization ite
 
 ## Steps
 
-If you haven't connected to the KernelGen Operator Development MCP Toolkit and load skills, see [KernelGen Skills User Guide], otherwise use one of the following methods to invoke the `kernelgen-flagos` skill and optimize an operator:
+If you haven't connected to the KernelGen Operator Development MCP Toolkit and load skills, see [KernelGen Skills User Guide](../skills_user_guide/skills-user-guide.md), otherwise use one of the following methods to invoke the `kernelgen-flagos` skill and optimize an operator:
 
 - Option 1: Use the slash command and prompt
 
