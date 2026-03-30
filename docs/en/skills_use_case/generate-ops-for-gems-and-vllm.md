@@ -26,6 +26,4 @@ For installation information, see [FlagGems Documentation](https://docs.flagos.i
 
 ## Generate a kernel
 
-Using VS Code (and Copilot), Claude Code, or OpenClaw to generate an operator for the FlagGems or vLLM project follows a similar general process in [KernelGen Skills User Guide](../skills_user_guide/skills-user-guide.md). The prompts can be same or for example, includes "Integrate the kernel into FlagGems." additionally.
-
-KernelGen auto-detects the FlagGems if installed, and submits the output files to the FlagGems project experimental directory.
+Using VS Code (and Copilot), Claude Code, or OpenClaw to generate an operator for the FlagGems or vLLM project follows a similar general process in [KernelGen Skills User Guide](../skills_user_guide/skills-user-guide.md). Prompts are generally interchangeable; for example, you can simply add "Integrate the kernel into FlagGems" to your request. KernelGen automatically detects if FlagGems is installed and submits the output files to the project's experimental directory.
