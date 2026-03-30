@@ -10,6 +10,8 @@ Regarding generating operators for FlagGems or vLLM project, optimizing operator
 
 - Install the GitHub Copilot extension. During your chat with Copilot, MCP tools are automatically invoked.
 
+- When using KernelGen skills, you must connect to the KernelGen Operator Development MCP Toolkit.
+
 ```{include} ../mcp_user_guide/connect_mcp/prerequisites.md
 :heading-offset: 1
 :relative-docs: ..
