@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'KernelGen 中文文档'
-copyright = '2025, FlagOS Community'
+copyright = '2025-2026, FlagOS Community'
 author = 'FlagOS Community'
 release = '1.0'
 
@@ -24,7 +24,7 @@ exclude_patterns = [
 ]
 
 language = 'zh_CN'
-locale_dirs = ['locale/']  # 创建locale目录存放翻译文件
+locale_dirs = ['locale/']  # 创建 locale 目录存放翻译文件
 gettext_compact = False
 
 extensions = [

@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'test-sphinx'
-copyright = '2025, FlagOS Community'
+copyright = '2025-2026, FlagOS Community'
 author = 'FlagOS Community'
 release = '1.0'
 
