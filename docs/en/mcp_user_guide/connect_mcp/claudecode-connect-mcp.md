@@ -46,10 +46,4 @@ Two methods are available to register the KernelGen Operator Development MCP Too
 
      - For team sharing, use the command `--scope project` (Do not submit tokens to Git).
 
-2. Verify the connection:
-
-  {style=lower-alpha}
-
-   1. Start Claude with the command `claude`.
-
-   2. Type `/mcp` to verify that connection status is `connected`.
+2. Chat with Claude Code and ask it to verify the connection.
