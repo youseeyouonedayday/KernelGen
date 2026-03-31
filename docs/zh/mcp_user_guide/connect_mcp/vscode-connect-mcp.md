@@ -1,14 +1,15 @@
-# 使用 VS Code 连接 KernelGen 算子开发 MCP 工具集
+# 使用 VS Code 连接到 KernelGen 算子开发 MCP Toolkit
 
-如果您使用 VS Code，请注意以下要求：
+使用 VS Code 时，请注意以下要求：
 
-* VS Code 版本需高于 2025 年 3 月发布的 1.99 版本。
+* VS Code 版本须高于 2025 年 3 月发布的 1.99 版本。
 
-* 需安装 GitHub Copilot 扩展。
+* 请安装 GitHub Copilot 扩展。
 
-如需将 VS Code 连接至 KernelGen 算子开发 MCP 工具集，请执行以下步骤：
+请按照以下步骤将 VS Code 连接到 KernelGen 算子开发 MCP Toolkit：
 
-1. 配置 KernelGen 算子开发 MCP 工具集。在项目根目录下创建 `.VS Code/mcp.json` 文件。
+1. 选择 **文件** > **首选项** > **设置** > **Chat** > **MCP**。在 **Server Sampling** 区域，点击"Edit in settings.json"链接。
+2. 将以下代码添加到 `setting.json` 文件中。
 
    ```json
    {
@@ -24,11 +25,12 @@
    }
    ```
 
-2. 验证 VS Code 与 KernelGen 算子开发 MCP 工具集之间的连接。
+3. 验证 VS Code 与 KernelGen MCP Server 之间的连接。
 
-   1. 按 **Ctrl**+**Shift**+**P** 打开命令面板，输入并搜索"MCP: List Servers"，然后按 Enter，即可显示当前在 VS Code 中配置的所有 MCP 服务器列表及其运行状态。
+   1. 按 **Ctrl**+**Shift**+**P** 打开命令面板，输入并搜索"MCP: List Servers"，然后按 Enter，即可显示当前在 VS Code 中配置的所有 MCP Server 及其运行状态。
 
-   2. 验证 KernelGen 算子开发 MCP 工具集的状态为 `connected`（已连接）。
+   2. 从列表中选择"kernelgen-mcp"，然后选择"Start Server"。
+   3. 验证"kernelgen-mcp"的状态为 `connected`。
 
 **注意**：
 

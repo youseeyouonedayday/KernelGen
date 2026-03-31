@@ -1,36 +1,26 @@
-# 使用 Claude Code 连接 KernelGen Operator Development MCP Toolkit
+# 使用 Claude Code 连接到 KernelGen 算子开发 MCP Toolkit
 
-如需将 Claude Code 连接至 KernelGen 算子开发 MCP 工具集，请执行以下步骤：
+请按照以下步骤将 Claude Code 连接到 KernelGen MCP Server：
 
-有两种方法可将 KernelGen 算子开发 MCP 工具集 注册到 Claude Code。无论使用哪种方法，您都必须充分了解 Claude Code 的作用域配置。更多信息请参阅 https://code.claude.com/docs/en/settings#
+将 KernelGen 算子开发 MCP Toolkit 注册到 Claude Code 有两种方式。无论使用哪种方式，您都必须充分了解 Claude Code 的 scope 配置。详情请参见 <https://code.claude.com/docs/en/settings#>
 
-1. 配置并连接 KernelGen 算子开发 MCP 工具集。
+1. 配置并连接到 KernelGen 算子开发 MCP Toolkit。
 
-   - **方式一**（推荐）：使用 Server-Sent Events（SSE）协议和 Bearer 认证，将 KernelGen 算子开发 MCP 工具集注册到 Claude Code。
-
-     ```bash
-     claude mcp add \
-       --transport sse \
-       --scope user \
-       -H "Authorization: Bearer <your Token>" \
-       kernelgen-mcp \
-        http:http://kernelgen.flagos.io/sse
-     ```
+   - **方式一**（推荐）：使用 Server-Sent Events（SSE）协议和 Bearer 认证，将 KernelGen 算子开发 MCP Toolkit 注册到 Claude Code。
 
      ```bash
-     claude mcp add --transport sse kernelgen-mcp http://kernelgen.flagos.io/sse \
-       --header "Authorization: Bearer <token>"
+     claude mcp add --transport sse kernelgen-mcp https://kernelgen.flagos.io/sse/ --header "Authorization: Bearer <your token>"
      ```
 
      **注意**：
 
-     - local（默认）：`.claude/settings.local.json`，仅限当前项目中的您本人使用。
+     - local（默认）：`.claude/settings.local.json`，仅限您自己在当前项目中使用。
 
-     - project：`.mcp.json`，供团队共享，可提交至 git。
+     - project：`.mcp.json`，供团队共享，可提交到 git。
 
      - user：`~/.claude/settings.json`，适用于您的所有项目。
 
-     更多信息请参阅 https://code.claude.com/docs/en/settings#
+     更多信息请参见 <https://code.claude.com/docs/en/settings#>
 
    - **方式二**：手动修改配置文件。
 
@@ -43,7 +33,7 @@
            "transport": "sse",
            "url": "http://kernelgen.flagos.io/sse",
            "headers": {
-             "Authorization": "Authorization: Bearer <your JW Token>"
+             "Authorization": "Authorization: Bearer <your Token>"
            }
          }
        }
@@ -54,10 +44,6 @@
 
      - 个人使用时，建议使用命令 `--scope user`（推荐）；
 
-     - 团队共享时，使用命令 `--scope project`（请勿将 Token 提交至 Git）。
+     - 团队共享时，使用命令 `--scope project`（请勿将 Token 提交到 Git）。
 
-2. 验证连接
-
-   1. 使用命令 `claude` 启动 Claude。
-
-   2. 输入 `/mcp`，验证连接状态是否为 `connected`（已连接）。
+2. 与 Claude Code 对话，请求其验证连接是否成功。
