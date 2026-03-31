@@ -8,18 +8,8 @@ Two methods are available to register the KernelGen Operator Development MCP Too
 
    - **Option 1** (Recommended): Use the Server-Sent Events (SSE) protocol and Bear authentication to register the KernelGen Operator Development MCP Toolkit with Claude Code.
 
-     ```json
-     claude mcp add \
-       --transport sse \
-       --scope user \
-       -H "Authorization: Bearer <your Token>" \
-       kernelgen-mcp \
-        http:http://kernelgen.flagos.io/sse
-     ```
-
      ```bash
-     claude mcp add --transport sse kernelgen-mcp http://kernelgen.flagos.io/sse \
-       --header "Authorization: Bearer <token>"
+     claude mcp add --transport sse kernelgen-mcp https://kernelgen.flagos.io/sse/ --header "Authorization: Bearer <your token>"
      ```
 
      **Note**:
