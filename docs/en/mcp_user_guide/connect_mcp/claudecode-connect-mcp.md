@@ -2,7 +2,7 @@
 
 To connect Claude Code to the KernelGem MCP server, perform the following steps:
 
-Two methods are available to register the KernelGen Operator Development MCP Toolkit to Claude Code. No matter which method you use, you must fully understand the scope configuration of Claude Code. For more information, see https://code.claude.com/docs/en/settings#
+Two methods are available to register the KernelGen Operator Development MCP Toolkit to Claude Code. No matter which method you use, you must fully understand the scope configuration of Claude Code. For more information, see <https://code.claude.com/docs/en/settings#>
 
 1. Configure and connect to the KernelGen Operator Development MCP Toolkit.
 
@@ -30,7 +30,7 @@ Two methods are available to register the KernelGen Operator Development MCP Too
 
      - user: `~/.claude/settings.json`, all your projects.
 
-     For more information, see https://code.claude.com/docs/en/settings#
+     For more information, see <https://code.claude.com/docs/en/settings#>
 
    - **Option 2**: Manually modify the configuration file.
 
@@ -43,7 +43,7 @@ Two methods are available to register the KernelGen Operator Development MCP Too
            "transport": "sse",
            "url": "http://kernelgen.flagos.io/sse",
            "headers": {
-             "Authorization": "Authorization: Bearer <your JW Token>"
+             "Authorization": "Authorization: Bearer <your Token>"
            }
          }
        }
@@ -56,8 +56,10 @@ Two methods are available to register the KernelGen Operator Development MCP Too
 
      - For team sharing, use the command `--scope project` (Do not submit tokens to Git).
 
-2. Verify the connection
-   {style=lower-alpha}
+2. Verify the connection:
+
+  {style=lower-alpha}
+
    1. Start Claude with the command `claude`.
 
    2. Type `/mcp` to verify that connection status is `connected`.
