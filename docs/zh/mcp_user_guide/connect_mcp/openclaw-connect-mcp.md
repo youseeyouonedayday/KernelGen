@@ -1,18 +1,11 @@
-# 使用 OpenClaw 连接 KernelGen 算子开发 MCP 工具集
+# 使用 OpenClaw 连接到 KernelGen 算子开发 MCP Toolkit
 
-如需将 OpenClaw 连接至 KernelGen 算子开发 MCP 工具集，请执行以下步骤：
+请按照以下步骤将 OpenClaw 连接到 KernelGen 算子开发 MCP Toolkit：
 
-1. 从 [ClawHub](https://clawhub.ai/steipete/mcporter) 下载并安装由 Peter Steinberger 创建的 McPorter 技能。
+向 OpenClaw 发送提示词："Connect to MCP, its url is http://kernelgen.flagos.io/sse and token is your token"。
 
-2. 配置 KernelGen 算子开发 MCP 工具集：与 OpenClaw 对话，要求其配置 KernelGen 算子开发 MCP 工具集，并以 JSON 格式粘贴以下信息：
+若当前 OpenClaw 版本不支持 MCP，可通过对话或命令安装 mcporter。
 
-```json
-{
-  "mcpServers": {
-    "kernelgen-mcp": {
-      "transport": "sse",
-      "url": "http://kernelgen.flagos.io/sse",
-      "headers": {
-        "Authorization": "Bearer <your Token>"
+```{code-block} shell
+"npx skills add steipete/clawdis@mcporter -g -y"
 ```
-

@@ -22,7 +22,7 @@ Regarding generating operators for FlagGems or vLLM project, optimizing operator
 
 1. Prompt to Copilot: "Install kernelgen-flagos skills from https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos".
 2. Allow all the sessions during the chat.
-3. When the `mcp.json` pops up, prompt to Copilot: “Replace the token with your token”.
+3. When the `mcp.json` pops up, prompt to Copilot: “Replace the token with *your token*”.
 4. Start KernelGen Operator Development MCP Toolkit:
 
     {style=lower-alpha}
@@ -48,7 +48,7 @@ Regarding generating operators for FlagGems or vLLM project, optimizing operator
 
 1. Prompt to OpenClaw: "Connect to MCP, its url is <http://kernelgen.flagos.io/sse> and token is your token".
 
-2. Prompt to OpenClaw to restart itself, since the previous step adds the KernelGen Operator Development MCP Toolkit as a MCP server to the `openclaw.json configuration file.
+2. Prompt to OpenClaw to restart itself, since the previous step adds the KernelGen Operator Development MCP Toolkit as a MCP server to the ``openclaw.json` configuration file.
 
 3. Prompt to OpenClaw: "Install kernelgen-flagos skills from https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos".
 

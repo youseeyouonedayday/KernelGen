@@ -6,9 +6,10 @@ If you use VS Code, note the following requirements:
 
 * Install the GitHub Copilot extension.
 
-To connect VS Code to KernelGem MCP server, perform the following steps:
+To connect VS Code to KernelGen Operator Development MCP Toolkit, perform the following steps:
 
-1. Configure the KernelGen Operator Development MCP Toolkit. Create `.VS Code/mcp.json` in the project root directory.
+1. Select **File** > **Preferences** > **Settings** > **Chat** > **MCP**.  In the **Server Sampling** section, click the "Edit in settings.json" link.
+2. Add the following code to the `setting.json` file.
 
    ```json
    {
@@ -24,7 +25,7 @@ To connect VS Code to KernelGem MCP server, perform the following steps:
    }
    ```
 
-2. Verify the connection between VS Code and KerngelGen MCP server.
+3. Verify the connection between VS Code and KerngelGen MCP server.
 
    1. Press **Ctrl**+**Shift**+**P** to open the command palette, type and search for "MCP: List Servers", then press Enter to display a list of all MCP servers currently configured in VS Code along with their running status.
 

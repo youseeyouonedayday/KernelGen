@@ -1,67 +1,79 @@
-# KernelGen Skills 用户指南
+# KernelGen 技能（Skills）用户指南
 
-本节介绍如何使用 VS Code（及 Copilot）、Claude Code 和 OpenClaw 连接 KernelGen 算子开发 MCP 工具集，并使用 KernelGen Skills 进行通用算子生成。
+本节介绍如何使用 VS Code（及 Copilot）、Claude Code 和 OpenClaw 连接到 KernelGen 算子开发 MCP Toolkit，并使用 KernelGen 技能（Skills）生成算子的一般流程。
 
-有关为 FlagGems 或 vLLM 项目生成算子、优化算子、跨硬件平台特化算子以及生成 TLE 算子的内容，请参阅《KernelGen Skills 使用案例》。
+关于为 FlagGems 或 vLLM 项目生成算子、优化算子以及跨硬件平台专化算子的使用案例，请参见 [KernelGen 技能使用案例](../skills_use_case/skills-use-case.md)。
 
-## 通用算子生成
+## 前提条件
 
-本节介绍如何使用 VS Code（及 GitHub Copilot）、Claude Code 和 OpenClaw 进行通用 ReLU 算子生成。
+- VS Code 版本须高于 2025 年 3 月发布的 1.99 版本。
 
-### 加载技能（Skills）
+- 使用 VS Code 时，请安装 GitHub Copilot 扩展。
 
-#### 使用 VS Code 加载技能
+- 使用 KernelGen 技能（Skills）时，必须连接到 KernelGen 算子开发 MCP Toolkit。
 
-##### 前提条件
+```{include} ../mcp_user_guide/connect_mcp/prerequisites.md
+:heading-offset: 1
+:relative-docs: ..
+:relative-images: ../../assets/images
+```
 
-- VS Code 版本需高于 2025 年 3 月发布的 1.99 版本。
+## 连接 VS Code 和 GitHub Copilot 到 KernelGen 算子开发 MCP Toolkit 并加载技能
 
-- 安装 GitHub Copilot 扩展。在与 Copilot 对话时，MCP 工具将自动调用。
+1. 向 Copilot 发送提示词："Install kernelgen-flagos skills from https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos"。
+2. 在对话过程中，允许所有会话请求。
+3. 当 `mcp.json` 弹出时，向 Copilot 发送提示词："Replace the token with *your token*"。
+4. 启动 KernelGen 算子开发 MCP Toolkit：
 
-##### 步骤
+    {style=lower-alpha}
 
-1. 配置 KernelGen Operator Development MCP Toolkit。请参阅[使用 VS Code 连接 KernelGen Operator Development MCP Toolkit](../mcp_user_guide/connect_mcp/vscode-connect-mcp.md)。
-   **注意**：获取 Bear token，请参阅[获取 Bear 令牌](../mcp_user_guide/connect_mcp/prerequisites.md)。
+   1. 按 **Ctrl+Shift+P** 打开命令面板，输入并搜索"MCP: List Servers"，然后按 Enter，即可显示当前在 VS Code 中配置的所有 MCP Server 及其运行状态。
+   2. 选择"kernelgen-mcp"并点击"Start Server"。
 
-2. 从 [FlagOS Skills Github](https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos) 下载并安装 `kernelgen-flagos` 技能。有关技能安装方法，请参阅 [VS Code 文档](https://code.visualstudio.com/docs/copilot/customization/agent-skills)。
+## 连接 Claude Code 到 KernelGen 算子开发 MCP Toolkit 并加载技能
 
-#### 使用 Claude Code 加载技能
+```{include} ../mcp_user_guide/connect_mcp/claudecode-connect-mcp.md
+:heading-offset: 2
+:relative-docs: ..
+:relative-images: ../../assets/images
+```
 
-##### 步骤
+### 安装技能
 
-1. 配置 KernelGen 算子开发 MCP 工具集。请参阅[使用 Claude Code 连接 KernelGen 算子开发 MCP 工具集](../mcp_user_guide/connect_mcp/claudecode-connect-mcp.md)。
-   **注意**：获取 Bear token，请参阅[获取 Bear 令牌](../mcp_user_guide/connect_mcp/prerequisites.md)。
+1. 向 Copilot 发送提示词："Install kernelgen-flagos skills from https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos"。
+2. 安装技能后，使用 **Control+C** 重启 Claude Code。
+3. 使用命令"/"验证技能是否已安装，若列表中出现 kernelgen-flagos，则说明技能安装成功。
 
-2. 从 [FlagOS Skills Github](https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos) 下载并安装 `kernelgen-flagos` 技能。有关技能安装方法，请参阅 [Claude Code 文档](https://code.claude.com/docs/en/skills)。
+## 连接 OpenClaw 到 KernelGen 算子开发 MCP Toolkit 并加载技能
 
-#### 使用 OpenClaw 加载技能
+1. 向 OpenClaw 发送提示词："Connect to MCP, its url is <http://kernelgen.flagos.io/sse> and token is your token"。
 
-##### 步骤
+2. 提示 OpenClaw 重启自身，因为上一步已将 KernelGen 算子开发 MCP Toolkit 作为 MCP Server 添加到 `openclaw.json` 配置文件中。
 
-1. 配置 KernelGen 算子开发 MCP 工具集。请参阅[使用 OpenClaw 连接 KernelGen 算子开发 MCP 工具集](../mcp_user_guide/connect_mcp/openclaw-connect-mcp.md)。
-   **注意**：获取 Bear token，请参阅[获取 Bear 令牌](../mcp_user_guide/connect_mcp/prerequisites.md)。
+3. 向 OpenClaw 发送提示词："Install kernelgen-flagos skills from https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos"。
 
-2. 下载并安装以下技能：
+4. 向 OpenClaw 发送提示词："Convert the skills to OpenClaw compatible skills and install again"。
 
-   - 从 [ClawHub](https://clawhub.ai/steipete/mcporter) 获取由 Peter Steinberger 创建的 McPorter 技能
-   - 从 [FlagOS Skills Github](https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos) 获取 `kernelgen-flagos` 技能
+## 生成算子
 
-   有关技能安装方法，请参阅 [OpenClaw 文档](https://docs.openclaw.ai/tools/skills)。
+### 一般性生成算子
 
-### 生成算子
+生成算子时，典型的提示词应包含以下必填和可选要素：算子名称（必填）、任务描述（必填）、输入参数及数据类型、输出参数及数据类型、测试设备，以及算子优化的迭代次数。
 
-1. 通过以下任一方式调用 `kernelgen-flagos` 技能：
+您可以使用以下任一方式调用 `kernelgen-flagos` 技能并生成算子：
 
-   - 使用斜杠命令 `/kernelgen-flagos`
+- **方式一**：使用斜杠命令和提示词
 
-   - 在提示词中包含技能名称
+   ```{code-block} shell
+   /kernelgen-flagos Generate the ReLU operator. The classification is pointwise. There is 1 input parameter: input: torch. Tensor, the input tensor, which can be of any shape and data type, usually floating-point type, and requires the application of the ReLU activation function. There is 1 output. Output: torch. Tensor, the output tensor after ReLU activation, with the same shape as input, and the logic is max(0, input), i.e., all negative values become 0, and positive values remain unchanged. Use MetaX.
+   ```
 
-2. 与 OpenClaw 对话，通过自然语言描述生成 ReLU 算子的需求。
+- **方式二**：完全使用提示词
 
-   - **典型需求**：算子名称（必填）、任务描述（必填）、输入参数及数据类型、输出参数及数据类型、测试设备和算子优化迭代次数。
+   ```{code-block} shell
+   Use kernelgen-flagos to generate the ReLU operator. The classification is pointwise. There is 1 input parameter: input: torch. Tensor, the input tensor, which can be of any shape and data type, usually floating-point type, and requires the application of the ReLU activation function. There is 1 output. Output: torch. Tensor, the output tensor after ReLU activation, with the same shape as input, and the logic is max(0, input), i.e., all negative values become 0, and positive values remain unchanged. Use MetaX.
+   ```
 
-   - **需求示例**："**算子名称为 ReLU**，分类为逐元素（pointwise）。有 1 个输入参数：input: torch.Tensor，输入张量，可以是任意形状和数据类型，通常为浮点类型，需要应用 ReLU 激活函数。有 1 个输出。Output: torch.Tensor，经过 ReLU 激活后的输出张量，形状与输入相同，逻辑为 max(0, input)，即所有负值变为 0，正值保持不变。使用沐曦（MetaX）。"
+关于可生成算子的硬件平台，请参见[支持的硬件平台](../KernelGen_overview/supported-hardware-platforms.md)。
 
-有关为 FlagGems 或 vLLM 项目生成算子、优化算子、跨硬件平台特化算子以及 TLE 相关使用案例，请参阅《KernelGen Skills 使用案例》。
-
-
+关于为 FlagGems 或 vLLM 项目生成算子、优化算子以及跨硬件平台专化算子的使用案例，请参见 [KernelGen 技能使用案例](../skills_use_case/skills-use-case.md)。

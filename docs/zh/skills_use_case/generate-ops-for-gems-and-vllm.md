@@ -1,31 +1,29 @@
 # 为 FlagGems 或 vLLM 项目生成 Kernel
 
-使用 VS Code（及 Copilot）、Claude Code 或 OpenClaw 为 FlagGems 或 vLLM 项目生成算子，遵循相似的通用流程。
+## 前提条件
 
-## 步骤
+生成 Kernel 之前，请确保您已阅读本节中的前提条件，并完成预安装步骤。
 
-1. 配置 KernelGen 算子开发 MCP 工具集。请参阅[配置并连接 KernelGen 算子开发 MCP 工具集](../mcp_user_guide/connect_mcp/connect-mcp.md)。
+- 我们已测试以下 AI 智能体版本，建议使用已测试版本或更新版本。
 
-2. 从 [FlagOS Skills Github](https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos) 下载并安装 `kernelgen-flagos` 技能。
+  | AI 智能体                  | 已测试版本 |
+  |--------------------------|----------------|
+  | Claude Code              | 2.1.72         |
+  | VS Code（及 Copilot）     | 0.38.2         |
+  | openClaw                 | 2026.2.26      |
 
-3. 通过以下任一方式调用 `kernelgen-flagos` 技能：
+- 预先安装 FlagGems 或 vLLM。
 
-   - 使用斜杠命令 `/kernelgen-flagos`
+  - KernelGen 技能支持 FlagGems，请参见下方[预安装 FlagGems](https://jwolpxeehx.feishu.cn/wiki/DcB6wnUlyiJzaHkmlUQcUNfcnpb#share-PTNCdXxFUobOUxxZ76xcwgzEnSb) 章节。
 
-   - 在提示词中包含技能名称
+  - KernelGen 技能支持 vLLM，请参见 [vLLM 用户指南](https://docs.vllm.ai/en/latest/getting_started/installation/)。
 
-  有关技能安装方法，请参阅相应文档：
+## 预安装 FlagGems
 
-- [VS Code 文档](https://code.visualstudio.com/docs/copilot/customization/agent-skills)
+安装信息请参见 [FlagGems 文档](https://docs.flagos.io/projects/FlagGems/en/latest/getting_started/install.html#)。
 
-- [Claude Code 文档](https://code.claude.com/docs/en/skills)
+**注意**：安装过程中，请跳过 `pip install -r flag_tree_requirements/requirements_nvidia.txt` 命令，因为该命令涉及 FlagTree 及其依赖项的安装。
 
-- [OpenClaw 文档](https://docs.openclaw.ai/tools/skills)
+## 生成 Kernel
 
-- 与 AI 智能体对话，描述您生成 ReLU 算子的需求。
-
-  - **典型需求**：算子名称（必填）、任务描述（必填）、输入参数及数据类型、输出参数及数据类型和测试设备。
-
-  - **需求示例**："**生成一个 ReLU 算子**，分类为逐元素（pointwise）。有 1 个输入参数：input: torch.Tensor，输入张量，可以是任意形状和数据类型，通常为浮点类型，需要应用 ReLU 激活函数。有 1 个输出。Output: torch.Tensor，经过 ReLU 激活后的输出张量，形状与输入相同，逻辑为 max(0, input)，即所有负值变为 0，正值保持不变。将算子集成到 FlagGems 中。使用沐曦（MetaX）。"
-
-输出文件将自动提交到 FlagGems 项目。
+使用 VS Code（及 Copilot）、Claude Code 或 OpenClaw 为 FlagGems 或 vLLM 项目生成算子，其一般流程与 [KernelGen 技能用户指南](../skills_user_guide/skills-user-guide.md) 中的描述基本相同。提示词通常可以通用，例如，您只需在请求中添加"Integrate the kernel into FlagGems"即可。KernelGen 会自动检测是否已安装 FlagGems，并将输出文件提交到该项目的实验目录中。
