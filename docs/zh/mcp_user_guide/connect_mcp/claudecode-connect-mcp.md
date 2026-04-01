@@ -1,6 +1,6 @@
 # 使用 Claude Code 连接到 KernelGen 算子开发 MCP 工具集
 
-请按照以下步骤将 Claude Code 连接到 KernelGen MCP Server：
+请按照以下步骤将 Claude Code 连接到 KernelGen 算子开发 MCP 工具集：
 
 将 KernelGen 算子开发 MCP 工具集 注册到 Claude Code 有两种方式。无论使用哪种方式，您都必须充分了解 Claude Code 的 scope 配置。详情请参见 <https://code.claude.com/docs/en/settings#>
 

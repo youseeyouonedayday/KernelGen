@@ -1,6 +1,6 @@
 # Use Claude Code to connect to KernelGen Operator Development MCP Toolkit
 
-To connect Claude Code to the KernelGem MCP server, perform the following steps:
+To connect Claude Code to the KernelGen Operator Development MCP Toolkit, perform the following steps:
 
 Two methods are available to register the KernelGen Operator Development MCP Toolkit to Claude Code. No matter which method you use, you must fully understand the scope configuration of Claude Code. For more information, see <https://code.claude.com/docs/en/settings#>
 

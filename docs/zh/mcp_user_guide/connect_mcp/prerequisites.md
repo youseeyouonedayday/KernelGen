@@ -7,10 +7,10 @@
 1. 在浏览器中打开 [https://KernelGen.flagos.io/login](https://kernelgen.flagos.io/login)。
 
 2. 点击 **Start Building for Free**。
-   ![alt text](../../assets/images/start-building-from-free.png)
+   ![alt text](../../assets/images/start-building-from-free-zh.png)
 
 3. 向下滚动页面至底部，点击 **MCP Service**。
-   ![alt text](../../assets/images/building-methods.png)
+   ![alt text](../../assets/images/building-methods-zh.png)
 
 4. 在右侧的 **Access Token** 区域，点击眼睛图标查看 Bearer Token，再点击 **Copy** 将其复制到剪贴板并保存备用。
 
@@ -18,11 +18,10 @@
    访问 Token 需要您先登录 KernelGen Web 平台。
    ```
 
-   ![alt text](../../assets/images/token.png)
+   ![alt text](../../assets/images/token-zh.png)
 
    之后，您可以在将 AI 智能体连接到 KernelGen 算子开发 MCP 工具集 时使用此 Token。
 
-   ```
 
 **注意**：
 
