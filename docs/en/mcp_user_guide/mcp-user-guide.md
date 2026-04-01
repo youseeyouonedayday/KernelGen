@@ -6,6 +6,6 @@ This section introduces how to use VS Code (and Copilot), Claude Code, and OpenC
 ```{toctree}
 :maxdepth: 2
 
-connect_mcp/connect-mcp.m
+connect_mcp/connect-mcp.md
 mcp_tool/mcp-tool.md
 ```
