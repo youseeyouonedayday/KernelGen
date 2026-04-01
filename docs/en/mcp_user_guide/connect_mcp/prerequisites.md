@@ -22,7 +22,6 @@ To retrieve your token, follow these steps:
 
    You can then use this token when connecting your AI agent to the KernelGen Operator Development MCP Toolkit.
 
-   ```
 
 **Note**:
 
