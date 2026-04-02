@@ -20,7 +20,7 @@ Regarding generating operators for FlagGems or vLLM project, optimizing operator
 
 ## Connect VS Code and Github Copilot to KernelGen Operator Development MCP Toolkit and load skills
 
-1. Prompt to Copilot: "Install kernelgen-flagos skills from https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos".
+1. Prompt to Copilot: "Install kernelgen-flagos skills from <https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos>".
 2. Allow all the sessions during the chat.
 3. When the `mcp.json` pops up, prompt to Copilot: “Replace the token with *your token*”.
 4. Start KernelGen Operator Development MCP Toolkit:
@@ -40,9 +40,29 @@ Regarding generating operators for FlagGems or vLLM project, optimizing operator
 
 ### Install skills
 
-1. Prompt to Copilot: "Install kernelgen-flagos skills from https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos".
+1. Install `kernelgen-flagos` unified skill：  
+   - **Option 1**: Prompt to Copilot: "Install kernelgen-flagos skills from <https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos>".
+   - **Option 2**: Use the command to install skills.
+
+      ```{code-block} shell
+      # Option A: Install the unified kernelgen-flagos skill, including all sub-skills
+      npx skills add flagos-ai/skills --skill kernelgen -a claude-code
+
+      # Option B: Install all Flagos skills at once
+      npx skills add flagos-ai/skills -a claude-code
+
+      # Option C: Manual install
+      From your project root
+      mkdir -p .claude/skills
+      cp -r <path-to-this-repo>/skills/kernelgen .claude/skills/
+      ```
+
 2. After installing skills, restart the Claude Code with **Control+C**.
 3. Verify the skills are installed using command "/", if kernelgen-flagos listed, the skills are installed.
+
+### npx requirements
+
+npx requires npm version equal or greater than 5.2.0.
 
 ## Connect OpenClaw to KernelGen Operator Development MCP Toolkit and load skills
 
@@ -50,7 +70,7 @@ Regarding generating operators for FlagGems or vLLM project, optimizing operator
 
 2. Prompt to OpenClaw to restart itself, since the previous step adds the KernelGen Operator Development MCP Toolkit as a MCP server to the ``openclaw.json` configuration file.
 
-3. Prompt to OpenClaw: "Install kernelgen-flagos skills from https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos".
+3. Prompt to OpenClaw: "Install kernelgen-flagos skills from <https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos>".
 
 4. Prompt to OpenClaw: "Convert the skills to OpenClaw compatible skills and install again".
 

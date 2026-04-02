@@ -71,6 +71,16 @@
 [了解更多 »](skill_use_case/skills-use-case)
 :::
 
+:::{grid-item-card} {octicon}`broadcast;1.5em;sd-mr-1` FAQs
+:link: faqs/faqs
+:link-type: doc
+
+关于常见问题的信息。
+
++++
+[Learn more »](skill_use_case/skills-use-case)
+:::
+
 ::::
 
 ---
@@ -102,6 +112,14 @@ skills_user_guide/skills-user-guide.md
 
 web_use_case/web-use-case-pr.md
 skills_use_case/skills-use-case.md
+```
+
+```{toctree}
+:caption: 📖 FAQs
+:maxdepth: 5
+:hidden:
+
+faqs/faqs.md
 ```
 
 ```{toctree}

@@ -40,9 +40,15 @@
 
 ### 安装 Skills
 
-1. 向 Copilot 发送提示词："从 https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos 安装 kernelgen-flagos Skills。"。
+1. 安装 kernelgen-flagos 统一技能：
+   - **选项一**：向 Copilot 发送提示词："从 https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos 安装 kernelgen-flagos Skills。"。
+   - **选项二**：使用命令来安装技能。
 2. 安装 Skills 后，使用 **Control+C** 重启 Claude Code。
 3. 使用命令"/"验证Skills是否已安装，若列表中出现 kernelgen-flagos，则说明Skills安装成功。
+
+### npx 环境要求
+
+npx 需要 npm 版本在 5.2.0 或更高。
 
 ## 连接 OpenClaw 到 KernelGen 算子开发 MCP 工具集并加载Skills
 
