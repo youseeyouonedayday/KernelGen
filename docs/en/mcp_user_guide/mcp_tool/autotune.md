@@ -2,7 +2,7 @@
 
 KernelGen Operator Development MCP Toolkit integrates an MCP tool for autotuning Kernels. You only need to provide a functional description of the operator. Through multiple rounds of intelligent iteration, the KernelGen automatically generates, verifies, and continuously optimizes the operator implementation, ultimately delivering a high-performance Triton Kernel along with a complete test report.
 
-The autotune kernel function is supported on all testing devices. See [Supported Hardware Platforms](../../KernelGen_overview/KernelGen-overview.md). You can invoke this tool through AI agents, including VS Code (and Github Copilot), Cursor, Claude Code, and OpenClaw.
+The autotune kernel function is supported on all testing devices. See [Supported Hardware Platforms](../../KernelGen_overview/KernelGen-overview.md). You can invoke this tool through AI agents, including VSCode (and Github Copilot), Cursor, Claude Code, and OpenClaw.
 
 If you haven’t connected to the KernelGen Operator Development MCP Toolkit, see [Configure and connect to KernelGen Operator Development MCP Toolkit](../connect_mcp/connect-mcp.md).
 

@@ -1,39 +1,55 @@
-# Use VS Code to connect to KernelGen Operator Development MCP Toolkit
+# Use VSCode to connect to KernelGen Operator Development MCP Toolkit
 
-If you use VS Code, note the following requirements:
+## Prerequisites
 
-* VS Code version should be greater than 1.99 released after March 2025.
+* Use VSCode version greater than 1.99
 
-* Install the GitHub Copilot extension.
+* Install the GitHub Copilot extension
 
-To connect VS Code to KernelGen Operator Development MCP Toolkit, perform the following steps:
+## Steps
 
-1. Select **File** > **Preferences** > **Settings** > **Chat** > **MCP**.  In the **Server Sampling** section, click the "Edit in settings.json" link.
-2. Add the following code to the `setting.json` file.
+To connect VSCode to KernelGen Operator Development MCP Toolkit, perform the following steps:
 
-   ```json
-   {
-     "servers": {
-       "kernelgen-mcp": {
-         "type": "sse",
-         "url": "http://kernelgen.flagos.io/sse",
-         "headers": {
-           "Authorization": "Bearer <your Token>"
-         }
-       }
-     }
-   }
-   ```
+1. Connect to KernelGen Operator Development MCP Toolkit：
 
-3. Verify the connection between VS Code and KerngelGen MCP server.
+   - **Option 1**: Send a prompt to connect to the KernelGen Operator Development MCP Toolkit, for example:
 
-   1. Press **Ctrl**+**Shift**+**P** to open the command palette, type and search for "MCP: 列出服务器", then press Enter to display a list of all MCP servers currently configured in VS Code along with their running status.
+     - `Connect to MCP, its URL is https://kernelgen.flagos.io/sse and token is <your KernelGen Token>.`
 
-   2. Select "kernelgen-mcp" from list and select "启动服务器".
-   3. Verify that the status of the "kernelgen-mcp" is `connected`.
+     - `Please configure the kernelgen MCP with the URL https://kernelgen.flagos.io/sse and the token is <your KernelGen Token>. `
 
-**Note**:
+   - **Option 2**: Manual configuration
 
-* The configuration format of VS Code is `servers`, not `mcpServers`.
+    {style=lower-alpha}
 
-* The SSE mode URL path is typically `/sse` (default in FastMCP).
+     1. Select **File** > **Preferences**, then choose **Settings**. Navigate to **Chat** > **MCP**. In the **Server Sampling** section, click the "Edit in settings.json" link.
+
+     2. Add the following code to the `setting.json` file.
+
+        ```json
+        {
+          "servers": {
+            "kernelgen-mcp": {
+              "type": "sse",
+              "url": "https://kernelgen.flagos.io/sse",
+              "headers": {
+                "Authorization": "Bearer <your KernelGen Token>"
+              }
+            }
+          }
+        }
+        ```
+
+2. Start server.
+
+  {style=lower-alpha}
+
+   1. Press **Ctrl**+**Shift**+**P** to open the command palette, type and search for "MCP: List Servers", then press Enter to display a list of all MCP servers currently configured in VSCode along with their running status.
+
+   2. Select "kernelgen-mcp" from list and select "Start Server".
+
+3. Verify KernelGen Operator Development MCP Toolkit connection, prompt：
+  
+  ```{code-block} python
+  Please verify the kernelgen mcp connection is successful.
+  ```

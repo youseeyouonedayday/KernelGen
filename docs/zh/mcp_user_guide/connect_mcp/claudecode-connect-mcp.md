@@ -9,7 +9,7 @@
    - **方式一**（推荐）：使用 Server-Sent Events（SSE）协议和 Bearer 认证，将 KernelGen 算子开发 MCP 工具集注册到 Claude Code。
 
      ```bash
-     claude mcp add --transport sse kernelgen-mcp https://kernelgen.flagos.io/sse/ --header "Authorization: Bearer <your token>"
+     claude mcp add --transport sse kernelgen-mcp https://kernelgen.flagos.io/sse/ --header "Authorization: Bearer <your KernelGen Token>"
      ```
 
      **注意**：
@@ -31,9 +31,9 @@
        "mcpServers": {
          "kernelgen-mcp": {
            "transport": "sse",
-           "url": "http://kernelgen.flagos.io/sse",
+           "url": "https://kernelgen.flagos.io/sse",
            "headers": {
-             "Authorization": "Authorization: Bearer <your Token>"
+             "Authorization": "Authorization: Bearer <your KernelGen Token>"
            }
          }
        }

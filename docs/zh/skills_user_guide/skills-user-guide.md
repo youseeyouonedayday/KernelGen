@@ -1,14 +1,14 @@
 # KernelGen Skills 用户指南
 
-本节介绍如何使用 VS Code（及 Copilot）、Claude Code 和 OpenClaw 连接到 KernelGen 算子开发 MCP 工具集，并使用 KernelGen Skills 生成算子的一般流程。
+本节介绍如何使用 VSCode（及 Copilot）、Claude Code 和 OpenClaw 连接到 KernelGen 算子开发 MCP 工具集，并使用 KernelGen Skills 生成算子的一般流程。
 
 关于为 FlagGems 或 vLLM 项目生成算子、优化算子以及跨硬件平台特化算子的使用案例，请参见 [KernelGen Skills 使用案例](../skills_use_case/skills-use-case.md)。
 
 ## 前提条件
 
-- VS Code 版本须高于 2025 年 3 月发布的 1.99 版本。
+- VSCode 版本须高于 2025 年 3 月发布的 1.99 版本。
 
-- 使用 VS Code 时，请安装 GitHub Copilot 扩展。
+- 使用 VSCode 时，请安装 GitHub Copilot 扩展。
 
 - 使用 KernelGen Skills 时，必须连接到 KernelGen 算子开发 MCP 工具集。
 
@@ -18,7 +18,7 @@
 :relative-images: ../../assets/images
 ```
 
-## 连接 VS Code 和 GitHub Copilot 到 KernelGen 算子开发 MCP 工具集并加载Skills
+## 连接 VSCode 和 GitHub Copilot 到 KernelGen 算子开发 MCP 工具集并加载Skills
 
 1. 向 Copilot 发送提示词："从 https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos 安装 kernelgen-flagos Skills"。
 2. 在对话过程中，允许所有会话请求。
@@ -27,7 +27,7 @@
 
     {style=lower-alpha}
 
-   1. 按 **Ctrl+Shift+P** 打开命令面板，输入并搜索"MCP: List Servers"，然后按 Enter，即可显示当前在 VS Code 中配置的所有 MCP Server 及其运行状态。
+   1. 按 **Ctrl+Shift+P** 打开命令面板，输入并搜索"MCP: List Servers"，然后按 Enter，即可显示当前在 VSCode 中配置的所有 MCP Server 及其运行状态。
    2. 选择"kernelgen-mcp"并点击"Start Server"。
 
 ## 连接 Claude Code 到 KernelGen 算子开发 MCP 工具集并加载Skills
@@ -52,12 +52,12 @@ npx 需要 npm 版本在 5.2.0 或更高。
 
 ## 连接 OpenClaw 到 KernelGen 算子开发 MCP 工具集并加载Skills
 
-1. 向 OpenClaw 发送提示词："连接 MCP，其 URL 为 http://kernelgen.flagos.io/sse，Token为*你的 Token*。
+1. 向 OpenClaw 发送提示词："连接 MCP，其 URL 为 https://kernelgen.flagos.io/sse，Token为*你的 Token*。
 💡 结合网页信息的补充说明"。
 
 1. 提示 OpenClaw 重启自身，因为上一步已将 KernelGen 算子开发 MCP 工具集作为 MCP Server 添加到 `openclaw.json` 配置文件中。
 
-2. 向 OpenClaw 发送提示词："连接 MCP，其 URL 为 http://kernelgen.flagos.io/sse，Token为*你的 Token*"。
+2. 向 OpenClaw 发送提示词："连接 MCP，其 URL 为 https://kernelgen.flagos.io/sse，Token为*你的 Token*"。
 
 3. 向 OpenClaw 发送提示词："将 Skills 转换为 OpenClaw 兼容的 Skills 格式，然后重新安装"。
 

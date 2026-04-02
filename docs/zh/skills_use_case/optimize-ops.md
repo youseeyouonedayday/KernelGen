@@ -1,6 +1,6 @@
 # 优化算子
 
-您可以使用 VS Code（及 Copilot）、Claude Code 或 OpenClaw 在 **NVIDIA** 上优化算子。
+您可以使用 VSCode（及 Copilot）、Claude Code 或 OpenClaw 在 **NVIDIA** 上优化算子。
 
 优化算子时，典型的提示词应包含以下必填和可选要素：
 

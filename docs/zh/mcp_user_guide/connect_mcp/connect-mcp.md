@@ -1,6 +1,6 @@
 # 配置并连接到 KernelGen 算子开发 MCP 工具集
 
-本节介绍如何通过 VS Code（及 Copilot）、Claude Code 和 OpenClaw 连接到 KernelGen 算子开发 MCP 工具集。
+本节介绍如何通过 VSCode（及 Copilot）、Claude Code 和 OpenClaw 连接到 KernelGen 算子开发 MCP 工具集。
 
 
 ```{toctree}

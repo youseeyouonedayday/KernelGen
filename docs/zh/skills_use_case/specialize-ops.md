@@ -1,6 +1,6 @@
 # 特化算子
 
-您可以使用 VS Code（及 Copilot）、Claude Code 或 OpenClaw，将 CUDA 实现的算子迁移到华为昇腾（Huawei Ascend）。
+您可以使用 VSCode（及 Copilot）、Claude Code 或 OpenClaw，将 CUDA 实现的算子迁移到华为昇腾（Huawei Ascend）。
 
 特化算子时，典型的提示词应包含以下必填要素：算子名称（必填）和任务描述（必填）。
 

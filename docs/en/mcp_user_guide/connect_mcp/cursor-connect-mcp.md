@@ -4,9 +4,9 @@ To connect Cursor to the KernelGen Operator Development MCP Toolkit, set the `mc
 
 ```json
 "mcp_kernelgen": {
-      "url": "http://kernelgen.flagos.io/sse",
+      "url": "https://kernelgen.flagos.io/sse",
       "headers": {
-        "Authorization": "Bearer <your token>"
+        "Authorization": "Bearer <your KernelGen Token>"
       },
       "timeout": 3600,
       "disabled": false

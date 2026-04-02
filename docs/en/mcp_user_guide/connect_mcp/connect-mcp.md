@@ -1,6 +1,6 @@
 # Configure and connect to KernelGen Operator Development MCP Toolkit
 
-This section introduces how to connect to KernelGen Operator Development MCP Toolkit through VS Code (and Copilot), Claude Code, and OpenClaw.
+This section introduces how to connect to KernelGen Operator Development MCP Toolkit through VSCode (and Copilot), Claude Code, and OpenClaw.
 
 
 ```{toctree}

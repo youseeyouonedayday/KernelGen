@@ -9,7 +9,7 @@ Before generating a kernel, make sure you read the prerequisites and accomplish 
   | AI agent                  | Tested version |
   |--------------------------|----------------|
   | Claude Code              | 2.1.72         |
-  | VS Code （and Copilot）   | 0.38.2         |
+  | VSCode （and Copilot）   | 0.38.2         |
   | openClaw                 | 2026.2.26      |
 
 - Preinstall FlagGems or vLLM.
@@ -26,4 +26,4 @@ For installation information, see [FlagGems Documentation](https://docs.flagos.i
 
 ## Generate a kernel
 
-Using VS Code (and Copilot), Claude Code, or OpenClaw to generate an operator for the FlagGems or vLLM project follows a similar general process in [KernelGen Skills User Guide](../skills_user_guide/skills-user-guide.md). Prompts are generally interchangeable; for example, you can simply add "Integrate the kernel into FlagGems" to your request. KernelGen automatically detects if FlagGems is installed and submits the output files to the project's experimental directory.
+Using VSCode (and Copilot), Claude Code, or OpenClaw to generate an operator for the FlagGems or vLLM project follows a similar general process in [KernelGen Skills User Guide](../skills_user_guide/skills-user-guide.md). Prompts are generally interchangeable; for example, you can simply add "Integrate the kernel into FlagGems" to your request. KernelGen automatically detects if FlagGems is installed and submits the output files to the project's experimental directory.

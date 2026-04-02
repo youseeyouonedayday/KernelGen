@@ -1,6 +1,6 @@
 # Specialize an operator
 
-You can use either VS Code (and Copilot), Claude Code, or OpenClaw to migrate CUDA-implemented operators to Huawei Ascend.
+You can use either VSCode (and Copilot), Claude Code, or OpenClaw to migrate CUDA-implemented operators to Huawei Ascend.
 
 To optimize an operator, a typical prompt should include the following mandatory and optional elements: Operator name（mandatory）and task description (mandatory).
 

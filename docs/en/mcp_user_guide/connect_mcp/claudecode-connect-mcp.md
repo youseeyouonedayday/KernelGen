@@ -1,15 +1,25 @@
 # Use Claude Code to connect to KernelGen Operator Development MCP Toolkit
 
+## Prerequisites
+
+Use Claude Code version 2.1 and later
+
+## Steps
+
 To connect Claude Code to the KernelGen Operator Development MCP Toolkit, perform the following steps:
 
-Two methods are available to register the KernelGen Operator Development MCP Toolkit to Claude Code. No matter which method you use, you must fully understand the scope configuration of Claude Code. For more information, see <https://code.claude.com/docs/en/settings#>
+1. Use the Server-Sent Events (SSE) protocol and Bear authentication to register the KernelGen Operator Development MCP Toolkit with Claude Code:
 
-1. Configure and connect to the KernelGen Operator Development MCP Toolkit.
+   - **Option 1** (Recommended): Send a prompt to connect to the KernelGen Operator Development MCP Toolkit, for example:
 
-   - **Option 1** (Recommended): Use the Server-Sent Events (SSE) protocol and Bear authentication to register the KernelGen Operator Development MCP Toolkit with Claude Code.
+     - `Connect to MCP, its URL is https://kernelgen.flagos.io/sse and token is <your KernelGen Token>.`
+
+     - `Please configure the kernelgen MCP with the URL https://kernelgen.flagos.io/sse and the token is <your KernelGen Token>. `
+  
+   - **Option 2** : Use the following command:
 
      ```bash
-     claude mcp add --transport sse kernelgen-mcp https://kernelgen.flagos.io/sse/ --header "Authorization: Bearer <your token>"
+     claude mcp add --transport sse kernelgen-mcp https://kernelgen.flagos.io/sse/ --header "Authorization: Bearer <your KernelGen Token>"
      ```
 
      **Note**:
@@ -22,7 +32,7 @@ Two methods are available to register the KernelGen Operator Development MCP Too
 
      For more information, see <https://code.claude.com/docs/en/settings#>
 
-   - **Option 2**: Manually modify the configuration file.
+   - **Option 3**: Manually modify the configuration file.
 
      Edit `~/.claude/settings.json` as follows:
 
@@ -31,9 +41,9 @@ Two methods are available to register the KernelGen Operator Development MCP Too
        "mcpServers": {
          "kernelgen-mcp": {
            "transport": "sse",
-           "url": "http://kernelgen.flagos.io/sse",
+           "url": "https://kernelgen.flagos.io/sse",
            "headers": {
-             "Authorization": "Authorization: Bearer <your Token>"
+             "Authorization": "Authorization: Bearer <your KernelGen Token>"
            }
          }
        }

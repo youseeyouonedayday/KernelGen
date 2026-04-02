@@ -1,6 +1,6 @@
 # Optimize an operator
 
-You can use either VS Code (and Copilot), Claude Code, or OpenClaw to optimize operators on **NVIDIA**.
+You can use either VSCode (and Copilot), Claude Code, or OpenClaw to optimize operators on **NVIDIA**.
 
 To optimize an operator, a typical prompt should include the following mandatory and optional elements:
 

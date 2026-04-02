@@ -2,7 +2,7 @@
 
 KernelGen 算子开发 MCP 工具集集成了用于 Kernel 自动调优的 MCP 工具。您只需提供算子的功能描述，KernelGen 便会通过多轮智能迭代，自动生成、验证并持续优化算子实现，最终输出高性能 Triton Kernel 及完整的测试报告。
 
-所有测试设备均支持自动调优 Kernel 功能。请参见[支持的硬件平台](../../KernelGen_overview/KernelGen-overview.md)。您可以通过 AI 智能体调用此工具，支持的智能体包括 VS Code（及 GitHub Copilot）、Cursor、Claude Code 和 OpenClaw。
+所有测试设备均支持自动调优 Kernel 功能。请参见[支持的硬件平台](../../KernelGen_overview/KernelGen-overview.md)。您可以通过 AI 智能体调用此工具，支持的智能体包括 VSCode（及 GitHub Copilot）、Cursor、Claude Code 和 OpenClaw。
 
 如果您尚未连接到 KernelGen 算子开发 MCP 工具集，请参见[配置并连接到 KernelGen 算子开发 MCP 工具集](../connect_mcp/connect-mcp.md)。
 

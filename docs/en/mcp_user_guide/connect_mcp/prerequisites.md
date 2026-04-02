@@ -1,8 +1,8 @@
-# Obtain Bearer Token
+# Obtain KernelGen Token
 
-Before configuring and connecting your AI agent to the KernelGen Operator Development MCP Toolkit, you must obtain a Bearer Token from the KernelGen Web Platform.
+Before configuring and connecting your AI agent to the KernelGen Operator Development MCP Toolkit, you must obtain a KernelGen Token from the KernelGen Web Platform.
 
-To retrieve your token, follow these steps:
+To retrieve your KernelGen Token, follow these steps:
 
 1. Open [https://KernelGen.flagos.io/login](https://kernelgen.flagos.io/login) in your browser.
 
@@ -12,7 +12,7 @@ To retrieve your token, follow these steps:
 3. When the page is scrolled down to the bottom, click **MCP Service**.
    ![alt text](../../assets/images/building-methods.png)
 
-4. In the **Access Token** section on the right, click the eye icon to view the Bearer token and click **Copy** to copy it to the clipboard and save it for later use.
+4. In the **KernelGen Token** section on the right, click the eye icon to view the KernelGen Token and click **Copy** to copy it to the clipboard and save it for later use.
 
    ```{note}
    Accessing the token requires you to log in to the KernelGen Web Platform.
@@ -25,6 +25,6 @@ To retrieve your token, follow these steps:
 
 **Note**:
 
-- Treat your Bearer Token as a sensitive credential. Do not share it or expose it in public repositories.
+- Treat your KernelGen Token as a sensitive credential. Do not share it or expose it in public repositories.
 
-- Tokens have an expiration time. If your token has expired and you cannot connect to the KernelGen Operator Development MCP Toolkit, you can log in to the KernelGen Web Platform to copy a new one.
+- Tokens have an expiration time. If your KernelGen Token has expired and you cannot connect to the KernelGen Operator Development MCP Toolkit, you can log in to the KernelGen Web Platform to copy a new one.

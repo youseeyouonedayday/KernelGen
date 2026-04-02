@@ -9,7 +9,7 @@
   | AI 智能体                  | 已测试版本 |
   |--------------------------|----------------|
   | Claude Code              | 2.1.72         |
-  | VS Code（及 Copilot）     | 0.38.2         |
+  | VSCode（及 Copilot）     | 0.38.2         |
   | openClaw                 | 2026.2.26      |
 
 - 预先安装 FlagGems 或 vLLM。
@@ -26,4 +26,4 @@
 
 ## 生成 Kernel
 
-使用 VS Code（及 Copilot）、Claude Code 或 OpenClaw 为 FlagGems 或 vLLM 项目生成算子，其一般流程与 [KernelGen Skills 用户指南](../skills_user_guide/skills-user-guide.md) 中的描述基本相同。提示词通常可以通用，例如，您只需在请求中添加"Integrate the kernel into FlagGems"即可。KernelGen 会自动检测是否已安装 FlagGems，并将输出文件提交到该项目的实验目录中。
+使用 VSCode（及 Copilot）、Claude Code 或 OpenClaw 为 FlagGems 或 vLLM 项目生成算子，其一般流程与 [KernelGen Skills 用户指南](../skills_user_guide/skills-user-guide.md) 中的描述基本相同。提示词通常可以通用，例如，您只需在请求中添加"Integrate the kernel into FlagGems"即可。KernelGen 会自动检测是否已安装 FlagGems，并将输出文件提交到该项目的实验目录中。
