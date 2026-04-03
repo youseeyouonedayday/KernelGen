@@ -68,7 +68,7 @@
 指导您如何针对各类场景生成、优化和特化算子。
 
 +++
-[了解更多 »](skill_use_case/skills-use-case)
+[了解更多 »](faqs/faqs)
 :::
 
 :::{grid-item-card} {octicon}`broadcast;1.5em;sd-mr-1` FAQs
