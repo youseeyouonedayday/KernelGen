@@ -6,7 +6,7 @@
 
 ## 步骤
 
-如果您尚未连接到 KernelGen 算子开发 MCP 工具集 并加载Skills，请参见 [KernelGen Skills 用户指南](../skills_user_guide/skills-user-guide.md)；否则，请使用以下任一方式调用 `kernelgen-flagos` Skills 并特化算子：
+如果您尚未连接到 KernelGen 算子开发 MCP 工具集并加载Skills，请参见 [KernelGen Skills 用户指南](../skills_user_guide/skills-user-guide.md)；否则，请使用以下任一方式调用 `kernelgen-flagos` Skills 并特化算子：
 
 - **方式一**：使用斜杠命令和提示词
 

@@ -1,49 +1,75 @@
-# 使用 Claude Code 连接到 KernelGen 算子开发 MCP 工具集
+# 使用 Claude Code 连接到 KernelGen 算子开发 MCP Toolkit
 
-请按照以下步骤将 Claude Code 连接到 KernelGen 算子开发 MCP 工具集：
+## 前提条件
 
-将 KernelGen 算子开发 MCP 工具集注册到 Claude Code 有两种方式。无论使用哪种方式，您都必须充分了解 Claude Code 的 scope 配置。详情请参见 <https://code.claude.com/docs/en/settings#>
+- 使用 Claude Code 2.1 及更高版本。
+- 了解 Claude Code 设置：<https://code.claude.com/docs/en/settings#>。
 
-1. 配置并连接到 KernelGen 算子开发 MCP 工具集。
+## 步骤
 
-   - **方式一**（推荐）：使用 Server-Sent Events（SSE）协议和 Bearer 认证，将 KernelGen 算子开发 MCP 工具集注册到 Claude Code。
+按照以下步骤将 Claude Code 连接到 KernelGen 算子开发 MCP Toolkit：
+
+1. 使用 Server-Sent Events（SSE）协议和 Bearer 认证方式，将 KernelGen 算子开发 MCP 工具集注册到 Claude Code：
+
+   - **方式一**（推荐）：发送提示词连接到 KernelGen 算子开发 MCP Toolkit，例如：
+
+     - `Connect to MCP, its URL is https://kernelgen.flagos.io/sse and token is <your KernelGen Token>.`
+
+     - `Please configure the kernelgen MCP with the URL https://kernelgen.flagos.io/sse and the token is <your KernelGen Token>.`
+  
+   - **方式二**：使用以下命令：
 
      ```bash
      claude mcp add --transport sse kernelgen-mcp https://kernelgen.flagos.io/sse/ --header "Authorization: Bearer <your KernelGen Token>"
      ```
 
-     **注意**：
+   - **方式三**：手动修改配置文件。
+  
+      - **方式 A**：在 `.claude.json` 文件中添加 JSON 配置：
 
-     - local（默认）：`.claude/settings.local.json`，仅限您自己在当前项目中使用。
+          ```{code-block} json
+          {
+            "projects": {
+              "/root/projects/my-project": {
+                "mcpServers": {
+                  "kernelgen-mcp": {
+                    "type": "sse",
+                    "url": "https://kernelgen.flagos.io/sse",
+                    "headers": {
+                      "Authorization": "Bearer <your KernelGen Token>"
+                    }
+                  }
+                }
+              }
+            }
+          }
+          ```
 
-     - project：`.mcp.json`，供团队共享，可提交到 git。
+      - **方式 B**：创建 `mcp.json` 文件并添加 JSON 配置：
 
-     - user：`~/.claude/settings.json`，适用于您的所有项目。
+        ```{code-block} python
+        {
+          "mcpServers": {
+            "kernelgen_mcp": {
+              "url": "http://kernelgen.flagos.io/sse",
+              "headers": {
+                "Authorization": "Bearer <your KernelGen Token>"
+              }
+            }
+          }
+        }
+        ```
 
-     更多信息请参见 <https://code.claude.com/docs/en/settings#>
+2. 验证 KernelGen 算子开发 MCP 工具集连接：
 
-   - **方式二**：手动修改配置文件。
+   - 方式一：使用提示词
 
-     按如下方式编辑 `~/.claude/settings.json`：
+    ```{code-block} shell
+    Please verify the kernelgen mcp connection is successful.
+    ```
 
-     ```json
-     {
-       "mcpServers": {
-         "kernelgen-mcp": {
-           "transport": "sse",
-           "url": "https://kernelgen.flagos.io/sse",
-           "headers": {
-             "Authorization": "Authorization: Bearer <your KernelGen Token>"
-           }
-         }
-       }
-     }
-     ```
+   - 方式二：使用命令
 
-     **注意**：
-
-     - 个人使用时，建议使用命令 `--scope user`（推荐）；
-
-     - 团队共享时，使用命令 `--scope project`（请勿将 Token 提交到 Git）。
-
-2. 与 Claude Code 对话，请求其验证连接是否成功。
+    ```{code-block} shell
+    /mcp
+    ```
