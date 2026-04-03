@@ -42,11 +42,15 @@ Regarding generating operators for FlagGems or vLLM project, optimizing operator
       npx skills add flagos-ai/skills --skill kernelgen-flagos -a claude-code
       ```
 
+      ```{note}
+      npx requires npm version 5.2.0 or higher. If npm is missing or your version is outdated, please run `npm -v` to check your current version and update it.
+      ```
+
       **Option 3**: Manual setup
 
       Create a folder named skills within your project and add the skill file.
 
-   You can go to https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos to clone the skills. Download this skill file and add it to your skills folder.
+      You can go to https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos to clone the skills. Download this skill file and add it to your skills folder.
 
       ```{code-block} python
       mkdir -p .claude/skills
@@ -56,11 +60,13 @@ Regarding generating operators for FlagGems or vLLM project, optimizing operator
 
 2. After installing skills, restart the Claude Code with **Control+C**.
 
-3. Verify the skills are installed using command "/", if kernelgen-flagos listed, the skills are installed.
+3. Verify the skills are setup:
 
-### npx requirements
+   {style=lower-alpha}
 
-npx requires npm version 5.2.0 or higher. If npm is missing or your version is outdated, please run `npm -v` to check your current version and update it.
+   1. Option 1: Use prompt: `Please verify if the kernelgen-flagos skills are working correctly.`
+   2. Option 2: Use command "/", if kernelgen-flagos is listed, the skills are installed.
+
 
 ## Connect OpenClaw to KernelGen Operator Development MCP Toolkit and load skills
 

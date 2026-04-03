@@ -2,9 +2,7 @@
 
 ## Prerequisites
 
-* Use VSCode version greater than 1.99
-
-* Install the GitHub Copilot extension
+Install the GitHub Copilot extension and ensure it is activated.
 
 ## Steps
 
@@ -12,7 +10,7 @@ To connect VSCode to KernelGen Operator Development MCP Toolkit, perform the fol
 
 1. Connect to KernelGen Operator Development MCP Toolkit：
 
-   - **Option 1**: Send a prompt to connect to the KernelGen Operator Development MCP Toolkit, for example:
+   - **Option 1** (Recommend): Send a prompt to connect to the KernelGen Operator Development MCP Toolkit, for example:
 
      - `Connect to MCP, its URL is https://kernelgen.flagos.io/sse and token is <your KernelGen Token>.`
 
@@ -50,6 +48,6 @@ To connect VSCode to KernelGen Operator Development MCP Toolkit, perform the fol
 
 3. Verify KernelGen Operator Development MCP Toolkit connection, prompt：
   
-  ```{code-block} python
+  ```{code-block} shell
   Please verify the kernelgen mcp connection is successful.
   ```

@@ -2,7 +2,8 @@
 
 ## Prerequisites
 
-Use Claude Code version 2.1 and later
+- Use Claude Code version 2.1 and later
+- Learn Claude Code settings: <https://code.claude.com/docs/en/settings#>.
 
 ## Steps
 
@@ -14,7 +15,7 @@ To connect Claude Code to the KernelGen Operator Development MCP Toolkit, perfor
 
      - `Connect to MCP, its URL is https://kernelgen.flagos.io/sse and token is <your KernelGen Token>.`
 
-     - `Please configure the kernelgen MCP with the URL https://kernelgen.flagos.io/sse and the token is <your KernelGen Token>. `
+     - `Please configure the kernelgen MCP with the URL https://kernelgen.flagos.io/sse and the token is <your KernelGen Token>.`
   
    - **Option 2** : Use the following command:
 
@@ -22,38 +23,45 @@ To connect Claude Code to the KernelGen Operator Development MCP Toolkit, perfor
      claude mcp add --transport sse kernelgen-mcp https://kernelgen.flagos.io/sse/ --header "Authorization: Bearer <your KernelGen Token>"
      ```
 
-     **Note**:
-
-     - local (default):`.claude/settings.local.json`, only yourself in the current project.
-
-     - project: `.mcp.json`, team sharing, submitted to git.
-
-     - user: `~/.claude/settings.json`, all your projects.
-
-     For more information, see <https://code.claude.com/docs/en/settings#>
-
    - **Option 3**: Manually modify the configuration file.
+  
+    - **Option A**: Add JSON configuration to the `.claude.json` file
 
-     Edit `~/.claude/settings.json` as follows:
+        ```{code-block} json
+        {
+          "projects": {
+            "/root/projects/my-project": {
+              "mcpServers": {
+                "kernelgen-mcp": {
+                  "type": "sse",
+                  "url": "https://kernelgen.flagos.io/sse",
+                  "headers": {
+                    "Authorization": "Bearer <your KernelGen Token>"
+                  }
+                }
+              }
+            }
+          }
+        }
+        ```
 
-     ```json
-     {
-       "mcpServers": {
-         "kernelgen-mcp": {
-           "transport": "sse",
-           "url": "https://kernelgen.flagos.io/sse",
-           "headers": {
-             "Authorization": "Authorization: Bearer <your KernelGen Token>"
-           }
-         }
-       }
-     }
-     ```
+    - **Option B**：Create `mcp.json` file, and add JSON configuration.
 
-     **Note**:
+    ```{code-block} python
+    {
+      "mcpServers": {
+        "kernelgen_mcp": {
+          "url": "http://kernelgen.flagos.io/sse",
+          "headers": {
+            "Authorization": "Bearer <your KernelGen Token>"
+          }
+        }
+      }
+    }
+    ```
 
-     - For personal use, use the command `--scope user`(Recommended);
+2. Verify KernelGen Operator Development MCP Toolkit connection, prompt：
 
-     - For team sharing, use the command `--scope project` (Do not submit tokens to Git).
-
-2. Chat with Claude Code and ask it to verify the connection.
+  ```{code-block} shell
+  Please verify the kernelgen mcp connection is successful.
+  ```

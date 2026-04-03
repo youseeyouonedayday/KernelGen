@@ -25,6 +25,4 @@ To retrieve your KernelGen Token, follow these steps:
 
 **Note**:
 
-- Treat your KernelGen Token as a sensitive credential. Do not share it or expose it in public repositories.
-
-- Tokens have an expiration time. If your KernelGen Token has expired and you cannot connect to the KernelGen Operator Development MCP Toolkit, you can log in to the KernelGen Web Platform to copy a new one.
+Tokens have an expiration time. If your KernelGen Token has expired and you cannot connect to the KernelGen Operator Development MCP Toolkit, you can log in to the KernelGen Web Platform to copy a new one.
