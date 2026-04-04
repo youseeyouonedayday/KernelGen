@@ -12,7 +12,7 @@
   | VSCode（及 Copilot）     | 0.38.2         |
   | openClaw                 | 2026.2.26      |
 
-- 预先安装 FlagGems 或 vLLM。
+- 预先从源码安装 FlagGems 或 vLLM。
 
   - KernelGen Skills 支持 FlagGems，请参见下方*预安装 FlagGems*章节。
 

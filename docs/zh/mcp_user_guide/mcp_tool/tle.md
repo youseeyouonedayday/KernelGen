@@ -9,7 +9,7 @@
 
 提示词示例：
 
-```{code-block} python
+```{code-block} shell
 调用 MCP 工具来生成 TLE ReLU 算子。
 ```
 

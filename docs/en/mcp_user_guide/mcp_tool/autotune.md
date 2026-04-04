@@ -6,18 +6,74 @@ The autotune kernel function is supported on all testing devices. See [Supported
 
 If you haven’t connected to the KernelGen Operator Development MCP Toolkit, see [Configure and connect to KernelGen Operator Development MCP Toolkit](../connect_mcp/connect-mcp.md).
 
-To autotune kernels, a typical prompt should include the following mandatory and optional elements:
+To autotune kernels, a typical prompt should include the mandatory and optional elements. See such information in Auto-tune template.
 
-“Invoke MCP tools” (mandatory), operator name（mandatory）, task description (mandatory), testing device, the number of rounds of iterations, and speedup ratio.
 
-Prompt example:
+## Auto-tune template
 
 ```{code-block} shell
-Invoke MCP tools to iteratively generate the rmsnorm operator on MetaX.
+Call the MCP tool to iteratively generate the **[operator name]** operator on **[target device]**.
+Task description: [Detailed description of the operator's functionality, inputs/outputs, and constraints]
+- Iterations: [N]
+- Speedup target: [X]
 ```
 
-**Note**:
+### Mandatory elements
 
-- If the number of iterations is not specified, a default of 3 rounds will be used; each iteration takes approximately 10 minutes.
+1. `Invoke the KernelGen MCP tool`
+2. Operator name
+3. Task description
 
-- If no speedup target is provided, a default speedup ratio of 1.2 will be assumed.
+### Optional elements (Recommended)
+
+1. Target device (e.g., MetaX, GPU model, etc.)
+2. Number of iterations (default: 3 rounds, ~10 minutes each)
+3. Speedup target (default: 1.2×)
+
+
+## Auto-tune examples
+
+### Example 1 — Basic version
+
+```{code-block} shell
+Call the KernelGen MCP tool to iteratively generate the **rmsnorm** operator on MetaX.
+Task description: Implement RMSNorm with an input tensor of shape `(batch, hidden_size)` and produce the normalized output.
+Use defaults:
+- Iterations = 3
+- Speedup target = 1.2×
+```
+
+
+### Example 2 — Recommended version
+
+```{code-block} shell
+Call the KernelGen MCP tool to iteratively generate the **rmsnorm** operator on MetaX.
+Task description: Implement an RMSNorm operator supporting both float16 and float32 inputs, with input shape `(batch, hidden_size)`. Numerical stability and parallel optimization should be considered.
+Iterations: 5
+Speedup target: 1.5×
+```
+
+### Example 3 — Production-grade version
+
+```{code-block} shell
+Call the KernelGen MCP tool to iteratively generate a **fused softmax** operator on an **NVIDIA GPU**.
+Task description: Implement a fused softmax with masking. The input is an attention score tensor of shape `(batch, head, seq_len, seq_len)`. The goal is to minimize memory access and maximize throughput.
+Iterations: 6
+Speedup target: 2.0×
+```
+
+### Tips for better results
+
+The more specific your task description, the better the auto-tuning outcome.
+
+**Do specify:**
+
+- Data type: `fp16` / `bf16` / `fp32`
+- Tensor shape
+- Whether kernel fusion is required
+- Performance bottleneck: memory-bound vs. compute-bound
+
+**Avoid:**
+
+- Vague descriptions like *"implement an operator"*
+- Omitting input/output specifications

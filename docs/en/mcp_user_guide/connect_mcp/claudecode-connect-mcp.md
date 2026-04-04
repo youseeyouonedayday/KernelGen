@@ -25,43 +25,51 @@ To connect Claude Code to the KernelGen Operator Development MCP Toolkit, perfor
 
    - **Option 3**: Manually modify the configuration file.
   
-    - **Option A**: Add JSON configuration to the `.claude.json` file
+      - **Option A**: Add JSON configuration to the `.claude.json` file
 
-        ```{code-block} json
-        {
-          "projects": {
-            "/root/projects/my-project": {
-              "mcpServers": {
-                "kernelgen-mcp": {
-                  "type": "sse",
-                  "url": "https://kernelgen.flagos.io/sse",
-                  "headers": {
-                    "Authorization": "Bearer <your KernelGen Token>"
+          ```{code-block} json
+          {
+            "projects": {
+              "/root/projects/my-project": {
+                "mcpServers": {
+                  "kernelgen-mcp": {
+                    "type": "sse",
+                    "url": "https://kernelgen.flagos.io/sse",
+                    "headers": {
+                      "Authorization": "Bearer <your KernelGen Token>"
+                    }
                   }
                 }
+              }
+            }
+          }
+          ```
+
+      - **Option B**：Create `mcp.json` file, and add JSON configuration.
+
+        ```{code-block} python
+        {
+          "mcpServers": {
+            "kernelgen_mcp": {
+              "url": "http://kernelgen.flagos.io/sse",
+              "headers": {
+                "Authorization": "Bearer <your KernelGen Token>"
               }
             }
           }
         }
         ```
 
-    - **Option B**：Create `mcp.json` file, and add JSON configuration.
+2. Verify KernelGen Operator Development MCP Toolkit connection：
 
-    ```{code-block} python
-    {
-      "mcpServers": {
-        "kernelgen_mcp": {
-          "url": "http://kernelgen.flagos.io/sse",
-          "headers": {
-            "Authorization": "Bearer <your KernelGen Token>"
-          }
-        }
-      }
-    }
+   - Option 1: Use prompt
+
+    ```{code-block} shell
+    Please verify the kernelgen mcp connection is successful.
     ```
 
-2. Verify KernelGen Operator Development MCP Toolkit connection, prompt：
+- Option 2: Use command
 
-  ```{code-block} shell
-  Please verify the kernelgen mcp connection is successful.
-  ```
+    ```{code-block} shell
+    /mcp
+    ```

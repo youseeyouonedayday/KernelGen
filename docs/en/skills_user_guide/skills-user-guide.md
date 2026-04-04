@@ -32,7 +32,7 @@ Regarding generating operators for FlagGems or vLLM project, optimizing operator
 1. Setup `kernelgen-flagos` unified skill：  
    - **Option 1** (Recommended): Send a prompt to setup the `kernelgen-flagos` unified skill, including all sub-skills, for example:
 
-      ```{code-block} python
+      ```{code-block} shell
       Setup kernelgen-flagos skills from https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos.
       ```
 
@@ -52,39 +52,41 @@ Regarding generating operators for FlagGems or vLLM project, optimizing operator
 
       You can go to https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos to clone the skills. Download this skill file and add it to your skills folder.
 
-      ```{code-block} python
+      ```{code-block} shell
       mkdir -p .claude/skills
       git clone https://github.com/flagos-ai/skills/
       cp -r skills/skills/kernelgen-flagos/ .claude/skills/
       ```
 
-2. After installing skills, restart the Claude Code with **Control+C**.
+2. After setting up skills, restart the Claude Code with **Control+C**.
 
 3. Verify the skills are setup:
 
    {style=lower-alpha}
 
    1. Option 1: Use prompt: `Please verify if the kernelgen-flagos skills are working correctly.`
-   2. Option 2: Use command "/", if kernelgen-flagos is listed, the skills are installed.
+   2. Option 2: Use command "/", if kernelgen-flagos is listed, the skills are setup.
 
 
 ## Connect OpenClaw to KernelGen Operator Development MCP Toolkit and load skills
 
 1. Send a prompt to connect to the KernelGen Operator Development MCP Toolkit, for example:
-   - "Connect to MCP, its URL is https://kernelgen.flagos.io/sse and token is <your KernelGen Token>."
-   - "Please configure the kernelgen MCP with the URL https://kernelgen.flagos.io/sse and the token is <your KernelGen Token>. "
+   - `Connect to MCP, its URL is https://kernelgen.flagos.io/sse and token is <your KernelGen Token>.`
+   - `Please configure the kernelgen MCP with the URL https://kernelgen.flagos.io/sse and the token is <your KernelGen Token>.`
 
 2. Send a prompt to restart OpenClaw, since the previous step adds the KernelGen Operator Development MCP Toolkit as a MCP server to the `openclaw.json` configuration file.
 
-3. Send a prompt to setup the kernelgen-flagos unified skill, including all sub-skills, for example:: "Setup kernelgen-flagos skills from <https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos>".
+3. Send a prompt to setup the kernelgen-flagos unified skill, including all sub-skills, for example: `Setup kernelgen-flagos skills from <https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos>`.
 
-4. Send a prompt to OpenClaw: "Convert the skills to OpenClaw compatible skills and install again".
+4. Send a prompt to OpenClaw: `Convert the skills to OpenClaw compatible skills and install again`.
+
+5. Verify skills are successfully setup: `Please verify if the kernelgen-flagos skills are working correctly.`
 
 ## Connect VSCode and Github Copilot to KernelGen Operator Development MCP Toolkit and load skills
 
 1. Send a prompt to connect to the KernelGen Operator Development MCP Toolkit, for example:
-   - "Connect to MCP, its URL is https://kernelgen.flagos.io/sse and token is <your KernelGen Token>."
-   - "Please configure the kernelgen MCP with the URL https://kernelgen.flagos.io/sse and the token is <your KernelGen Token>. "
+   - `Connect to MCP, its URL is https://kernelgen.flagos.io/sse and token is <your KernelGen Token>.`
+   - `Please configure the kernelgen MCP with the URL https://kernelgen.flagos.io/sse and the token is <your KernelGen Token>. `
 
 2. Start KernelGen Operator Development MCP Toolkit:
 
@@ -93,13 +95,12 @@ Regarding generating operators for FlagGems or vLLM project, optimizing operator
    1. Press **Ctrl+Shift+P** to open the command palette, type and search for “MCP: List Servers”, then press Enter to display a list of all MCP servers currently configured in VSCode along with their running status.
    2. Select "kernelgen-mcp" and "Start Server".
 
-3. Verify KernelGen Operator Development MCP Toolkit connection, send a prompt “Please verify the kernelgen mcp connection is successful.”
+3. Verify KernelGen Operator Development MCP Toolkit connection, send a prompt: `Please verify the kernelgen mcp connection is successful.`
 
-4. Send a prompt to setup the kernelgen-flagos unified skill, including all sub-skills, for example:: "Setup kernelgen-flagos skills from <https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos>".
+4. Send a prompt to setup the kernelgen-flagos unified skill, including all sub-skills, for example: `Setup kernelgen-flagos skills from <https://github.com/flagos-ai/skills/tree/main/skills/kernelgen-flagos>`.
 
-5. Verify skills are successfully installed: "Please verify if the kernelgen-flagos skills are working correctly."
+5. Verify skills are successfully setup: `Please verify if the kernelgen-flagos skills are working correctly.`
 
-6. Send a prompt to run a task, for example, generating an operator.
 
 ## Generate an operator generally
 

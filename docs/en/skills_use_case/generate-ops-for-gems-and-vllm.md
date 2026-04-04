@@ -12,9 +12,9 @@ Before generating a kernel, make sure you read the prerequisites and accomplish 
   | VSCode （and Copilot）   | 0.38.2         |
   | openClaw                 | 2026.2.26      |
 
-- Preinstall FlagGems or vLLM.
+- Preinstall FlagGems or vLLM from source
 
-  - KernelGen Skills support FlagGems, see the next *Preinstall FlagGems* section.
+  - KernelGen Skills support FlagGems, see the next *Preinstall FlagGems* section. 
 
   - KernelGen Skills support vLLM, see [vLLM user guide](https://docs.vllm.ai/en/latest/getting_started/installation/).
 
@@ -22,7 +22,9 @@ Before generating a kernel, make sure you read the prerequisites and accomplish 
 
 For installation information, see [FlagGems Documentation](https://docs.flagos.io/projects/FlagGems/en/latest/getting_started/install.html#).
 
-**Note**: During the installation, skip the`pip install -r flag_tree_requirements/requirements_nvidia.txt` command since this command relates to installation of FlagTree and its dependencies.
+**Note**:
+
+During the installation, skip the`pip install -r flag_tree_requirements/requirements_nvidia.txt` command since this command relates to installation of FlagTree and its dependencies.
 
 ## Generate a kernel
 

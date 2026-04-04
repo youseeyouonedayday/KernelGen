@@ -12,12 +12,12 @@
 
 - **方式一**：使用斜杠命令和提示词
 
-   ```{code-block} python
+   ```{code-block} shell
    /kernelgen-flagos 优化 index_put 算子，共进行 5 次迭代。
    ```
 
 - **方式二**：完全使用提示词
 
-   ```{code-block} python
+   ```{code-block} shell
    使用 kernelgen-flagos 优化 index_put 算子，共进行 5 次迭代。
    ```
